@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.eladapps.cloudchat" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="CarrierapiPlugin">
+        <param name="android-package" value="org.apache.cordova.carrierapi.CarrierapiPlugin" />
+    </feature>
+    <feature name="DbapiPlugin">
+        <param name="android-package" value="org.apache.cordova.chatdb.DbapiPlugin" />
+    </feature>
+    <feature name="StoastapiPlugin">
+        <param name="android-package" value="org.apache.cordova.toastapi.StoastapiPlugin" />
+    </feature>
+    <feature name="SelfscanPlugin">
+        <param name="android-package" value="org.apache.cordova.selfscan.SelfscanPlugin" />
+    </feature>
+    <feature name="SelfmicrvideoPlugin">
+        <param name="android-package" value="org.apache.cordova.micrvideo.SelfmicrvideoPlugin" />
+    </feature>
+    <feature name="SpvwalletapiPlugin">
+        <param name="android-package" value="org.apache.cordova.spvapi.SpvwalletapiPlugin" />
+    </feature>
+    <name>CloudChat</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <platform name="android">
+        <icon density="ldpi" src="res/mipmap/ic_launcher.png" />
+        <icon density="ldpi" src="res/mipmap-ldpi/ic_launcher.png" />
+        <icon density="mdpi" src="res/mipmap-mdpi/ic_launcher.png" />
+        <icon density="hdpi" src="res/mipmap-hdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="res/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="res/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="res/mipmap-xxxhdpi/ic_launcher.png" />
+
+        <!-- you can use any density that exists in the Android project -->
+        <splash src="res/splash-port-hdpi/screen.png" density="port-hdpi"/>
+       <!--
+        <splash src="res/splash-port-ldpi/screen.png" density="port-ldpi"/>
+        <splash src="res/splash-port-mdpi/screen.png" density="port-mdpi"/>
+        <splash src="res/splash-port-xhdpi/screen.png" density="port-xhdpi"/>
+        <splash src="res/splash-port-xxhdpi/screen.png" density="port-xxhdpi"/>
+        <splash src="res/splash-port-xxxhdpi/screen.png" density="port-xxxhdpi"/>
+        -->
+    </platform>
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="QRScanner">
+        <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner" />
+    </feature>
+</widget>

@@ -1,0 +1,31 @@
+<div class="common_top">
+    <div class="common_top_l"><i class="iconfont padcs" ng-click="meindexback_feed()">&#xe508;</i></div>
+    <div class="common_top_m">信息反馈</div>
+    <div class="common_top_r">
+    </div>
+</div>
+<div class="main_my_top">
+</div>
+<div class="feedback">
+    <ul>
+        <li style="list-style:none; ">
+            <span>标题：</span>
+            <input type="text" ng-model = "title" placeholder="请输入标题"/>
+        </li>
+        <li class="_content"  style="list-style:none; ">
+            <span>内容：</span>
+            <textarea ng-model = "content" placeholder="请输入内容"></textarea>
+        </li>
+        <li  style="list-style:none; ">
+            <span>邮箱：</span>
+            <input type="text" ng-model = "email" placeholder="请输入您的邮箱"/>
+        </li>
+        <li  style="list-style:none; ">
+            <span>电话：</span>
+            <input type="text" ng-model = "phone" placeholder="请输入您的电话"/>
+        </li>
+        <li class="_submit" style="list-style:none;">
+            <input type="button" ng-click = "submit()" value="提交"/>
+        </li>
+    </ul>
+</div>

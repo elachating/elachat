@@ -1,0 +1,51 @@
+
+<div class="common_top">
+	<div class="common_top_l"> <i class="iconfont padcs" onclick="back()">&#xe508;</i>导入钱包</div>
+	<div class="common_top_m"></div>
+	<div class="common_top_r">
+	
+	</div>
+</div>
+
+<div class="walletcreate">
+	<div class="_input">
+		<ul>
+			<li class="memorizingwords">
+				<span>助记词：</span>
+				<textarea placeholder="请输入助记词..."></textarea>
+			</li>
+			<li>
+				<span>钱包名称：</span>
+				<input type="text" placeholder="请输入钱包名称"/>
+			</li>
+			<li>
+				<span>钱包密码：</span>
+				<input type="text" placeholder="请输入钱包密码"/>
+			</li>
+			<li>
+				<span>重复密码：</span>
+				<input type="text"  placeholder="请重复输入钱包密码"/>
+			</li>
+			<li class="advanced" onclick="showphrasepassword()">
+				<span>高级选项</span>
+				<i class="iconfont padcs" id="turndown">&#xe635;</i>
+			</li>
+			<li class="advanced phrasepassword">
+				<span>短语密码</span>
+				<div class="defaultswitch">
+					<div id ="switch1" onclick ="clickswitch()">关闭</div>
+				</div>
+			</li>
+			<li id="phrasepassword" >
+				<span>设置密码：</span>
+				<input type="text"  placeholder="请重复输入钱包密码"/>
+			</li>
+			<li>
+			<input class="submit" type="button"  ng-click="jumpindex()"  value="导入钱包"/>
+			</li>
+		</ul>
+		
+	</div>
+</div>
+
+<div ng-include = "'template/footer.html'"></div>

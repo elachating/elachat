@@ -1,0 +1,33 @@
+<div class="common_top">
+	<div class="common_top_l"  ng-click="jumpcontactindex()"><i class="iconfont padcs" >&#xe508;</i></div>
+	<div class="common_top_m">{{"me_info"|translate}}</div>
+	<div class="common_top_r"></div>
+</div>
+<div class="main_newfrienddetail">
+	<div class="headimg">
+		<img src="img/boydefault.png"/>
+	</div>
+	<ul class="detailinfo">
+		<li>
+			<div class="lil">
+			<div style="width:20%;float:left;height:50px;line-height:50px;">{{"me_info_nickname"|translate}}：</div>
+			<div style="width:80%;float:left;font-size:12px;height:50px;line-height:50px;color:#999;">
+				<input type="text" value="" ng-value="nickname" id="nickname" disabled="disabled" style="float:left;width:70%;margin-top:10px;height:30px;line-height:30px;color:#888;border:1px solid #d5d5d5;" />
+				<i class="iconfont padcs" style="float:right;color:#666;" curstatus="0" id="editbtn" ng-click="editnickname()">&#xe603;</i>
+			</div>
+			</div>
+		</li>
+		<li>
+			<div style="width:20%;float:left;height:50px;line-height:50px;">UUID：</div>
+			<div style="width:80%;float:left;;height:50px;line-height:25px;word-break:break-all;font-size:11px;color:#999;" ng-bind="uid" id="uid"></div>
+		</li>
+		<li>
+			<div style="width:20%;float:left;height:50px;line-height:50px;">UADR：</div>
+			<div style="width:80%;float:left;height:50px;line-height:25px;word-break:break-all;font-size:11px;color:#999;" ng-bind="uaddress" id="uaddress"></div>
+		</li>
+		<li style="height:230px;">
+			<div id="qrcode" style="width:200px;height:200px;margin:0 auto;margin-top:20px;"></div>
+		</li>
+	</ul>
+</div>
+<div class="wavy-line"></div>

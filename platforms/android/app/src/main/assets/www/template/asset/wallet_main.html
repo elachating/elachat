@@ -1,0 +1,61 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="backwalletindex()">&#xe508;</i></div>
+	<div class="common_top_m" ng-bind="walletname_detail"></div>
+	<div class="common_top_r">
+	</div>
+</div>
+<div class="wallet_main" style="height:500px;">
+	<div class="main_content">
+		<div>
+			<p>
+				<span ng-bind="balanceofasset" style="font-size:20px;">0.00</span>
+				<span ng-bind="main_chainid"></span>
+			</p>
+			<p><span id="allsum">0.00 CNY</span></p>
+		</div>
+		<div>
+			<ul style="list-style-type:none;padding:0px;margin:0px;">
+				<li ng-click="jumpwalletsend()" ><i class="iconfont padcs" style="font-size:26px;">&#xe711;</i>发送</li>
+				<li>|</li>
+				<li ng-click="jumpwalletreceive()"><i class="iconfont padcs" style="font-size:26px;" >&#xe501;</i>接收</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main_history">
+		<div class="_history">
+			<div class="history_top">
+				<div>历史记录</div>
+				<div>
+					<!--
+					<span>所有</span>
+					<span>接收</span>
+					<span>发送</span>
+					-->
+				</div>
+			</div>
+			<div class="history_con" style="overflow-y:auto;height:380px;">
+				<ul style="list-style-type:none;" id="transactions">
+					<li ng-repeat="ntranscation in transactionlist" ng-click="jumptrandetail(ntranscation.txhash,ntranscation.noid)">
+						<p ng-if="ntranscation.inorout == 'in'">
+							<i class="iconfont">&#xe6bb;</i>
+							<span ng-if="ntranscation.confirmstatus == 'Unconfirmed'">待确认</span>
+							<span ng-if="ntranscation.confirmstatus == 'Pending'">确认中</span>
+							<span ng-if="ntranscation.confirmstatus == 'Confirmed'">已收款</span>
+						</p>
+						<p ng-if="ntranscation.inorout == 'out'">
+							<i class="iconfont">&#xe505;</i>
+							<span ng-if="ntranscation.confirmstatus == 'Unconfirmed'">待确认</span>
+							<span ng-if="ntranscation.confirmstatus == 'Pending'">确认中</span>
+							<span ng-if="ntranscation.confirmstatus == 'Confirmed'">已转账</span>
+						</p>
+						<p>
+							<span ng-if="ntranscation.inorout == 'in'">+{{ntranscation.amount}} ELA</span>
+							<span ng-if="ntranscation.inorout == 'out'">-{{ntranscation.amount}} ELA</span>
+							<span>{{ntranscation.adddate | date:'HH:mm:ss yyyy-MM-dd'}}</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

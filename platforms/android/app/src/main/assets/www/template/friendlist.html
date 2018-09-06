@@ -1,0 +1,78 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="jumpindex()">&#xe508;</i>{{"friendlist_title"|translate}}</div>
+	<div class="common_top_m"></div>
+	<div class="common_top_r">
+		<i class="iconfont padcs" style="font-size:22px;">&#xe616;</i>
+		<i class="iconfont padcs" ng-click="jumpaddfriend()">&#xe64c;</i>
+	</div>
+</div>
+<div class="main_friendlist">
+<ul class="main_friendlist_joinlist">
+<li ng-click="jumpmyinfo()">
+	<div>
+		<img src="img/eladefault.png" />
+	</div>
+	<div>
+		{{"friendlist_me"|translate}}
+	</div>
+</li>
+<li ng-click="jumpnewfriendlist()">
+	<div>
+		<img src="img/joinfriend.png" />
+	</div>
+	<div>
+		{{"friendlist_new_friend"|translate}}
+	</div>
+</li>
+</ul>
+<ul class="main_friendlist_personlist">
+<li style="width:100%;height:30px;line-height:30px;background-color:#f5f5f5;">&nbsp;&nbsp;A</li>
+<li ng-repeat="item in data" ng-click="frienddetail(item.uid,item.nickname,item.on)">
+
+	<div  ng-if="item.on == '1'">
+		<img src="img/boydefault.png" />
+	</div>
+
+	<div  ng-if="item.on == '0'" class="grayimg">
+		<img src="img/boydefault.png" />
+	</div>
+	<div ng-if="item.on == '1'" style="color:#000;">
+		{{item.nickname}}
+	</div>
+	<div ng-if="item.on == '0'" style="color:#999;">
+		{{item.nickname}}
+	</div>
+</li>
+</ul>
+<div class="letter_sort">
+	<div>↑</div>
+	<div>A</div>
+	<div>B</div>
+	<div>C</div>
+	<div>D</div>
+	<div>E</div>
+	<div>F</div>
+	<div>G</div>
+	<div>H</div>
+	<div>I</div>
+	<div>J</div>
+	<div>K</div>
+	<div>L</div>
+	<div>M</div>
+	<div>N</div>
+	<div>O</div>
+	<div>P</div>
+	<div>Q</div>
+	<div>R</div>
+	<div>S</div>
+	<div>T</div>
+	<div>U</div>
+	<div>V</div>
+	<div>W</div>
+	<div>X</div>
+	<div>Y</div>
+	<div>Z</div>
+	<div>#</div>
+	<div>↓</div>
+</div>
+</div>

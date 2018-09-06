@@ -1,0 +1,150 @@
+	<div class="top">
+	<div id="quotesindextop">
+		<div class="quotesindextop-l"></div>
+		<div class="quotesindextop-c">{{"quotalist_title"|translate}}</div>
+		<div class="quotesindextop-r"></div>
+	</div>
+	<div id="quoteschoose">
+		<div curid="usdt" ng-click="getmyquota('usdt',$event)">USDT</div>
+		<div curid="btc" ng-click="getmyquota('btc',$event)">BTC</div>
+		<div curid="eth" ng-click="getmyquota('eth',$event)">ETH</div>
+		<div curid="ela" ng-click="getmyquota('ela',$event)">ELA</div>
+	</div>
+	</div>
+	<div id="sublist">
+		<ul class="subcoinlist" id="usdt">
+			<li maincoin="usdt" subcoin="btc" ng-click="quotadetail('usdt','btc')">
+			<div class="lileft">
+				<div class="coinandprice"><span>BTC</span><span id="usdt_btc_aprice">0.00</span></div>
+				<div class="marketandprice"><span  id="usdt_btc_market">huobi</span><span id="usdt_btc_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_btc_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="eth" ng-click="quotadetail('usdt','eth')">
+			<div class="lileft">
+				<div class="coinandprice"><span>ETH</span><span id="usdt_eth_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_eth_market">huobi</span><span id="usdt_eth_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_btc_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="bch" ng-click="quotadetail('usdt','bch')">
+			<div class="lileft">
+				<div class="coinandprice"><span>BCH</span><span id="usdt_bch_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_bch_market">huobi</span><span id="usdt_bch_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_bch_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="eos" ng-click="quotadetail('usdt','eos')">
+			<div class="lileft">
+				<div class="coinandprice"><span>EOS</span><span id="usdt_eos_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_eos_market">huobi</span><span id="usdt_eos_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_eos_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="neo" ng-click="quotadetail('usdt','neo')">
+			<div class="lileft">
+				<div class="coinandprice"><span>NEO</span><span id="usdt_neo_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_neo_market">huobi</span><span id="usdt_neo_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_neo_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="qtum" ng-click="quotadetail('usdt','qtum')">
+			<div class="lileft">
+				<div class="coinandprice"><span>QTUM</span><span id="usdt_qtum_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_qtum_market">huobi</span><span id="usdt_qtum_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_qtum_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="ht" ng-click="quotadetail('usdt','ht')">
+			<div class="lileft">
+				<div class="coinandprice"><span>HT</span><span id="usdt_ht_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_ht_market">huobi</span><span id="usdt_ht_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_ht_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="ela" ng-click="quotadetail('usdt','ela')">
+			<div class="lileft">
+				<div class="coinandprice"><span>ELA</span><span id="usdt_ela_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_ela_market">huobi</span><span id="usdt_ela_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_ela_chargerrang">0.00%</span>
+			</div>
+			</li>
+			<li maincoin="usdt" subcoin="btm" ng-click="quotadetail('usdt','btm')">
+			<div class="lileft">
+				<div class="coinandprice"><span>BTM</span><span id="usdt_btm_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="usdt_btm_market">huobi</span><span id="usdt_btm_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="usdt_btm_chargerrang">0.00%</span>
+			</div>
+			</li>
+		</ul>
+		<ul class="subcoinlist" id="btc" style="display:none;">
+			<li maincoin="btc" subcoin="ela" ng-click="quotadetail('btc','ela')">
+			<div class="lileft">
+				<div class="coinandprice"><span>ELA</span><span id="btc_ela_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="btc_ela_market">huobi</span><span id="btc_ela_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="btc_ela_chargerrang">0.00%</span>
+			</div>
+			</li>
+		</ul>
+		<ul class="subcoinlist" id="eth" style="display:none;">
+			<li maincoin="eth" subcoin="ela" ng-click="quotadetail('eth','ela')">
+			<div class="lileft">
+				<div class="coinandprice"><span>ELA</span><span id="eth_ela_aprice">0.00</span></div>
+				<div class="marketandprice"><span id="eth_ela_market">huobi</span><span id="eth_ela_rprice">￥0.00</span></div>
+			</div>
+			<div class="liright">
+				<span class="chargerrang" id="eth_ela_chargerrang">0.00%</span>
+			</div>
+			</li>
+		</ul>
+		<ul class="subcoinlist" id="ela" style="display:none;">
+			<li maincoin="eth" subcoin="ela" style="text-align:center;line-height:50px;font-size:12px;">
+				暂无
+			</li>
+			
+		</ul>
+	</div>
+
+
+	<div class="common_footer">
+		<div ui-sref="index">
+			<i class="iconfont">&#xe624;</i>
+			<p>{{"f_message"|translate}}</p>
+		</div>
+		<div ui-sref="quota">
+			<i class="iconfont" style="color:#0070c9;">&#xe63c;</i>
+			<p>{{"f_quota"|translate}}</p>
+		</div>
+		<div ng-click="showapp()">
+			<i class="iconfont">&#xe61a;</i>
+			<p>{{"f_dapps"|translate}}</p>
+		</div>
+		<div  ui-sref="asset">
+			<i class="iconfont">&#xe65e;</i>
+			<p>{{"f_asset"|translate}}</p>
+		</div>
+		<div  ui-sref="me">
+			<i class="iconfont">&#xe63d;</i>
+			<p>{{"f_me"|translate}}</p>
+		</div>
+	</div>

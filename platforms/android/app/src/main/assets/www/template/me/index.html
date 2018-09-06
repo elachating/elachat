@@ -1,0 +1,95 @@
+<div class="common_top">
+	<div class="common_top_l"></div>
+	<div class="common_top_m">{{"me_index_title"|translate}}</div>
+	<div class="common_top_r">
+	</div>
+</div>
+<div class="main_my_top">
+	<ul class="top_u" style="list-style-type:none;padding-top:60px;">
+		<li class="top_li_l">
+			<div ng-click="jumpwallet()">
+				<i class="iconfont" style="font-size:33px;">&#xe6e8;</i>
+				<p>{{"me_index_walletset"|translate}}</p>
+			</div>
+		</li>
+		<li class="top_li_m">
+			<div ng-click="jumpsecurity()">
+				<i class="iconfont" style="font-size:35px;margin-left:10px;">&#xe6d2;</i>
+				<p>{{"me_index_security_setting"|translate}}</p>
+			</div>
+		</li>
+		<li class="top_li_r">
+			<div ng-click="jumpgeneral()">
+				<i class="iconfont" style="font-size:33px;">&#xe61f;</i>
+				<p>{{"me_index_generalset"|translate}}</p>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="main_setuplist">
+	<ul style="list-style-type:none;">
+		<li ng-click="jumpnews()" style="">
+			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont" style="font-size:22px;">&#xe66b;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_notice"|translate}}</span>
+			</div>
+		</li>
+		<li class="cate" style="list-style:none">
+			<div style="height:40px;line-height:40px;width:96%;padding-left:4%;color:#333;">
+				{{"me_index_help_reback"|translate}}
+			</div>
+		</li>
+		<li ng-click="jumphelpcenter()">
+			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont">&#xe6ce;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_helpcenter"|translate}}</span>
+			</div>
+		</li>
+		<li ng-click="jumpfeedback()">
+			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont">&#xe60b;</i>&nbsp;&nbsp;</div>
+				<span style="display:block;float:left;line-height:60px;">{{"me_index_messagereback"|translate}}</span>
+			</div>
+		</li>
+		<li class="cate" style="list-style:none">
+			<div style="height:40px;line-height:40px;width:96%;padding-left:4%;color:#333;">
+				{{"me_index_aboutus"|translate}}
+			</div>
+		</li>
+		<li ng-click="jumpupdate()">
+			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont" style="font-size:22px;">&#xe602;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_version_update"|translate}}</span>
+			</div>
+		</li>
+		<li ng-click="jumpagreement()">
+			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont" style="font-size:22px;">&#xe62d;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_license"|translate}}</span>
+			</div>
+		</li>
+		<li ng-click="jumpsupport()" style="list-style:none">
+			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont" style="font-size:18px;">&#xe678;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_support_us"|translate}}</span>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="common_footer">
+	<div ui-sref="index">
+		<i class="iconfont">&#xe624;</i>
+		<p>{{ 'f_message' | translate }}</p>
+	</div>
+	<div ui-sref="quota">
+		<i class="iconfont">&#xe63c;</i>
+		<p>{{ 'f_quota' | translate }}</p>
+	</div>
+	<div ng-click="showapp()">
+		<i class="iconfont">&#xe61a;</i>
+		<p>{{ 'f_dapps' | translate }}</p>
+	</div>
+	<div  ui-sref="asset">
+		<i class="iconfont">&#xe65e;</i>
+		<p>{{ 'f_asset' | translate }}</p>
+	</div>
+	<div  ui-sref="me">
+		<i class="iconfont" style="color:#0070c9;">&#xe63d;</i>
+		<p>{{ 'f_me' | translate }}</p>
+	</div>
+</div>

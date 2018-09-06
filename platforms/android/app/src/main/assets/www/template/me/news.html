@@ -1,0 +1,22 @@
+<div class="common_top">
+    <div class="common_top_l" ng-click="meindexback()"><i class="iconfont padcs">&#xe508;</i></div>
+    <div class="common_top_m">消息通知</div>
+    <div class="common_top_r" style="color:#fff;font-size:14px;text-align:right;line-height:50px;">
+        全部已读&nbsp;&nbsp;
+    </div>
+</div>
+<div class="newslist">
+    <ul>
+        <li ng-repeat="item in data" ng-click="jumpdetail(item.id)" style="list-style:none; ">
+            <div>
+                <i class="iconfont" ng-if="item.read == false" style="font-size:7px">&#xe58f;</i>
+            </div>
+            <div>
+                {{item.title}}
+            </div>
+            <div>
+                {{item.create_time}}
+            </div>
+        </li>
+    </ul>
+</div>
