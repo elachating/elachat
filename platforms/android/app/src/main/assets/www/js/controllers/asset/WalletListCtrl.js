@@ -16,6 +16,5 @@ define(['app'],function(app){
         $scope.jumpasset =  function(){
           $location.url('/asset');
         }
-
   }]);
 });

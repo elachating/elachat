@@ -6,9 +6,9 @@ define(['app'],function(app){
     '$stateParams',
     '$location',
     '$state',
-    function($scope,$rootScope,$stateParams,$location,$state){
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$state,$translate){
         $scope.chainidwalletname = $stateParams.chainidb +" - Wallet";
-        console.log("传值："+$stateParams.chainidb);
         $scope.backwalletmain = function(){
           $state.go('wallet_main', {chainida:$stateParams.chainidb});
         }
@@ -21,7 +21,7 @@ define(['app'],function(app){
                    input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
                    document.body.removeChild(input);
 
-			navigator.webtoast.showtoast("复制成功！",1);
+			navigator.webtoast.showtoast($translate.instant("wallet_receive_index_Copy_success"),1);
         }
         window.webspvwalletapi.addresslist(function(successa){
             console.log("地址列表："+ eval('(' + successa + ')').Addresses[0]);
@@ -32,7 +32,7 @@ define(['app'],function(app){
             });
             qrcode.makeCode(eval('(' + successa + ')').Addresses[0]);
         },function(errora){
-            console.log("错误"+errora);
+            //console.log("错误"+errora);
         },$stateParams.chainidb);
   }]);
 });

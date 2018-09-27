@@ -6,7 +6,8 @@ define(['app'],function(app){
     '$stateParams',
     '$location',
     '$http',
-    function($scope,$rootScope,$stateParams,$location,$http){
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$http,$translate){
            $scope.meindexback_support = function(){
                 $location.url("/me/index");
            }

@@ -4,14 +4,14 @@
 		<div class="quotesindextop-r"></div>
 	</div>
 	<div style="width:100%;height:266px;background-color:#0070c9;overflow:hidden;">
-		<div id="asset" style="width:100%;height:70px;text-align:center;line-height:70px;font-size:20px;color:#fff;margin-top:10px;">
+		<div ng-bind="curcoins" id="asset" style="width:100%;height:70px;text-align:center;line-height:70px;font-size:20px;color:#fff;margin-top:10px;">
 			0.00（Coin）
 		</div>
 		<div id="cointocoinmarket" style="width:100%;height:50px;text-align:center;line-height:40px;font-size:20px;color:#fff;">
 			<ul style="width:94%;height:auto;list-style-type:none;margin:0px;padding:0px;padding-left:3%;">
 				<li style="width:100%;height:50px;">
 				<div style="width:60%;height:40px;float:left;">
-					<div class="coinandprice"><span id="curcoin">BTC</span><span id="aprice"> 0.00</span></div>
+					<div class="coinandprice"><span ng-bind="curcoin" id="curcoin">BTC</span><span id="aprice"> 0.00</span></div>
 					<div class="marketandprice"><span  id="curmarket">huobi</span><span id="rprice">￥ 0.00</span></div>
 				</div>
 				<div style="width:40%;height:40px;float:left;">

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <manifest android:hardwareAccelerated="true"
     android:versionCode="10000"
-    android:versionName="1.0.0"
+    android:versionName="0.0.1"
     package="com.eladapps.cloudchat"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -26,7 +26,18 @@
         <activity android:name="org.apache.cordova.micrvideo.MicrvodeoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.eladapps.cloudchat.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
+
     <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="26" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />

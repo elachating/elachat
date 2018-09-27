@@ -346,6 +346,20 @@ module.exports = [
       "navigator.splashscreen"
     ]
   },
+  {
+            "file": "plugins/cordova-plugin-appversion/app-version.js",
+            "id": "cordova-plugin-appversion.RareloopAppVersion",
+            "clobbers": [
+                "AppVersion"
+            ]
+  },
+    {
+        "file": "plugins/cordova-plugin-app-update/AppUpdate.js",
+        "id": "cordova-plugin-app-update.AppUpdate",
+        "clobbers": [
+            "AppUpdate"
+        ]
+    }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
@@ -359,6 +373,8 @@ module.exports.metadata =
   "cordova-plugin-media-capture": "3.0.2",
   "cordova-plugin-network-information": "2.0.1",
   "cordova-plugin-splashscreen": "5.0.2",
+  "cordova-plugin-appversion": "1.0.0",
+  "cordova-plugin-app-update": "1.3.3",
 };
 // BOTTOM OF METADATA
 });

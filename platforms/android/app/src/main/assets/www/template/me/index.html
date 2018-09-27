@@ -56,7 +56,7 @@
 		</li>
 		<li ng-click="jumpupdate()">
 			<div style="height:60px;line-height:65px;width:96%;padding-left:4%;color:#333;">
-				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont" style="font-size:22px;">&#xe602;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_version_update"|translate}}</span>
+				<div style="float:left;height:60px;line-height:60px;"><i class="iconfont" style="font-size:22px;">&#xe602;</i>&nbsp;&nbsp;</div><span style="display:block;float:left;line-height:60px;">{{"me_index_version_update"|translate}}</span>&nbsp;&nbsp;<i class="iconfont" ng-show="upred" style="font-size:7px;color:red;">&#xe58f;</i>
 			</div>
 		</li>
 		<li ng-click="jumpagreement()">
@@ -79,10 +79,6 @@
 	<div ui-sref="quota">
 		<i class="iconfont">&#xe63c;</i>
 		<p>{{ 'f_quota' | translate }}</p>
-	</div>
-	<div ng-click="showapp()">
-		<i class="iconfont">&#xe61a;</i>
-		<p>{{ 'f_dapps' | translate }}</p>
 	</div>
 	<div  ui-sref="asset">
 		<i class="iconfont">&#xe65e;</i>

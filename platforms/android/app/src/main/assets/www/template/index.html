@@ -29,16 +29,12 @@
 		<i class="iconfont">&#xe63c;</i>
 		<p>{{ 'f_quota' | translate }}</p>
 	</div>
-	<div ng-click="showapp()">
-		<i class="iconfont">&#xe61a;</i>
-		<p>{{ 'f_dapps' | translate }}</p>
-	</div>
 	<div  ui-sref="asset">
 		<i class="iconfont">&#xe65e;</i>
 		<p>{{ 'f_asset' | translate }}</p>
 	</div>
 	<div  ui-sref="me">
 		<i class="iconfont">&#xe63d;</i>
-		<p>{{ 'f_me' | translate }}</p>
+		<p>{{ 'f_me' | translate }}<i class="iconfont" ng-show="upred" style="font-size:7px;color:red;">&#xe58f;</i></p>
 	</div>
 </div>

@@ -7,7 +7,8 @@ define(['app'],function(app){
     '$state',
     '$stateParams',
     '$timeout',
-    function($scope,$rootScope,$location,$state,$stateParams,$timeout){
+    '$translate',
+    function($scope,$rootScope,$location,$state,$stateParams,$timeout,$translate){
         $scope.jumpcontactindex = function (){
             $location.url('/friendlist');
         };

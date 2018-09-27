@@ -10,7 +10,8 @@ define(['app','services/ChatService'],function(app){
     '$interval',
     'ngDialog',
     '$cordovaFile',
-    function($scope,$state,$rootScope,$stateParams,$location,ChatService,$interval,ngDialog,$cordovaFile){
+    '$translate',
+    function($scope,$state,$rootScope,$stateParams,$location,ChatService,$interval,ngDialog,$cordovaFile,$translate){
         if($stateParams.nickname==""){
             window.webcarrierapi.getfriendinfo(function(success){
                   $scope.fnickname = success.nickname;
@@ -73,20 +74,7 @@ define(['app','services/ChatService'],function(app){
                  }
                  content.scrollTop=content.scrollHeight;
               });
-        },5000);
-           /* window.webdbapi.messagelist(function(suf){
-
-                var dataobj=eval('(' + suf + ')');
-                console.log("dsadsa"+suf);
-                for(var w=0;w<dataobj.length;w++){
-                   console.log("内容"+dataobj[w]['content']);
-                   content.innerHTML += '<li><img src="img/boydefault.png"  class="imgleft"><span  class="spanleft">'+dataobj[w]['content']+'</span></li>';
-                   contents.value = '';
-                }
-            },function(er){
-                console.log("错误"+er);
-            },$stateParams.fuid);
-            */
+        },3000);
         window.webcarrierapi.myinfo(function(successful){
           $scope.myuid = successful.uid;
                  content.scrollTop=content.scrollHeight;

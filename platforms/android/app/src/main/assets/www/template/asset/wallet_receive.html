@@ -1,10 +1,10 @@
 <div class="common_top" style="background-color:#666;">
 	<div class="common_top_l"> <i class="iconfont padcs" ng-click="backwalletmain()">&#xe508;</i></div>
-	<div class="common_top_m">收款</div>
+	<div class="common_top_m">{{"wallet_receive_index_title"|translate}}</div>
 	<div class="common_top_r">
 	</div>
 </div>
-<div class="wallet_main wallet_send" style="margin-top:90px;height:400px;padding:0px;backgroud-color:#fff;width:90%;margin-left:5%;border-radius:10px;">
+<div style="background-color:#fff;margin-top:90px;height:400px;padding:0px;backgroud-color:#fff;width:90%;margin-left:5%;border-radius:10px;">
 	<div style="width:100%;height:70px;background-color:#0070c9;border-radius:10px 10px 0px 0px;">
 		<div style="margin-top:10px;width:100%;height:30px;line-height:50px;font-size:16px;color:#fff;text-align:center;" ng-bind="chainidwalletname"></div>
 		<div style="color:#fff;font-size:14px;height:30px;line-height:35px;width:100%;text-align:center;font-size:10px;" ng-click="copytxt()"><i class="iconfont" style="color:#fff;">&#xe63e;</i> <span id="wadr" ng-bind="chainidaddress"></span></div>
@@ -12,7 +12,7 @@
 	<div class="_image" id="waqrcode" style="margin-top:30px;margin-bottom:30px;">
 	</div>
 	<div class="_input" style="border-top:1px solid #e5e5e5;margin-top:20px;">
-		<div style="font-size:12px;width:100%;text-align:center;height:30px;line-height:30px;margin-top:10px;">换个<i class="iconfont" style="font-size:20px;color:#0070c9;">&#xe54c;</i>地址</div>
+		<div style="display:none;font-size:12px;width:100%;text-align:center;height:30px;line-height:30px;margin-top:10px;">{{"wallet_receive_index_change"|translate}}<i class="iconfont" style="font-size:20px;color:#0070c9;">&#xe54c;</i>{{"wallet_receive_index_adr"|translate}}</div>
 	</div>
 </div>
 <style>

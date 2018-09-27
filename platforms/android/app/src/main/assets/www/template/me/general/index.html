@@ -13,7 +13,6 @@
 				<i class="iconfont" style="font-size:22px;">&#xe613;</i>&nbsp;&nbsp;</div>
 				<span style="display:block;float:left;line-height:60px;">{{"me_general_index_langset"|translate}}</span>
 				<select class="languageset" ng-change="langchange();"  ng-model="lang" style="width:120px;height:40px;line-height:40px;margin-top:10px;font-size:15px;">
-					<option  value='{{"me_general_index_choice"|translate}}'>{{"me_general_index_choice"|translate}}</option>
 					<option ng-repeat="x in sites" value="{{x.op}}">{{x.site}}</option>
 				</select>
 			</div>

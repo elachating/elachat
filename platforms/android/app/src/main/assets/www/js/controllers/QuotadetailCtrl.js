@@ -11,8 +11,10 @@ define(['app'],function(app){
     function($scope,$rootScope,$stateParams,$state,$interval,$location,$translate){
             $scope.quotamaincoin = $stateParams.maincoin;
             $scope.quotasubcoin = $stateParams.subcoin;
+            $scope.curcoins = $stateParams.subcoin.toUpperCase();
+            $scope.curcoin = $stateParams.subcoin.toUpperCase();
             $scope.paramurl = '&maincoin='+$stateParams.maincoin+'&subcoin='+$stateParams.subcoin;
-            $scope.quotadetailurl = 'http://cloudchat.io/quota/op.php?parm=detail'+ $scope.paramurl;
+            $scope.quotadetailurl = 'http://ela.chat/quota/op.php?parm=detail'+ $scope.paramurl;
             $scope.jumpquotaindex = function(){
                  $location.url("/quotaindex");
             }
@@ -34,7 +36,7 @@ define(['app'],function(app){
             var pernum = Math.floor((((data.close-data.open)/data.open)*100)*100)/100;
             $("#pricecharge").html(pernum+"%");
             $("#aprice").html(data.close);
-            $("#rprice").html("￥ "+(data.close*6.4).toFixed(4));
+            $("#rprice").html("￥ "+(data.close*6.92).toFixed(4));
             $("#chargerrang").html(pernum+"%");
             if(pernum>0){
                 $("#chargerrang").css("background-color","#51cf6e");
@@ -111,44 +113,44 @@ define(['app'],function(app){
                 $("#fifteenmin").css("background-color","#fff");
                 $("#fifteenmin").css("color","#0070c9");
                 //url = 'https://api.huobipro.com/market/history/kline?period=15min&size=6&symbol=elausdt&AccessKeyId=84feea99-fab3f46a-a15cc86f-fc178';
-                //url = 'http://cloudchat.io/quota/15min.json';
-                $scope.quotadetailsuburl = 'http://cloudchat.io/quota/op.php?parm=min'+$scope.paramurl;;
+                //url = 'http://ela.chat/quota/15min.json';
+                $scope.quotadetailsuburl = 'http://ela.chat/quota/op.php?parm=min'+$scope.paramurl;;
              var cate = getpermin();
             }else if(a=="2"){
                 $("#onehour").css("background-color","#fff");
                 $("#onehour").css("color","#0070c9");
                 //url = 'https://api.huobipro.com/market/history/kline?period=60min&size=6&symbol=elausdt&AccessKeyId=84feea99-fab3f46a-a15cc86f-fc178';
-                //url = 'http://cloudchat.io/quota/day.json';
-                $scope.quotadetailsuburl = 'http://cloudchat.io/quota/op.php?parm=day'+$scope.paramurl;;
+                //url = 'http://ela.chat/quota/day.json';
+                $scope.quotadetailsuburl = 'http://ela.chat/quota/op.php?parm=day'+$scope.paramurl;;
             var cate = getperhour();
             }else if(a=="3"){
                 $("#oneweek").css("background-color","#fff");
                 $("#oneweek").css("color","#0070c9");
                 //url = 'https://api.huobipro.com/market/history/kline?period=1week&size=6&symbol=elausdt&AccessKeyId=84feea99-fab3f46a-a15cc86f-fc178';
-                //url = 'http://cloudchat.io/quota/week.json';
-                $scope.quotadetailsuburl = 'http://cloudchat.io/quota/op.php?parm=week'+$scope.paramurl;;
+                //url = 'http://ela.chat/quota/week.json';
+                $scope.quotadetailsuburl = 'http://ela.chat/quota/op.php?parm=week'+$scope.paramurl;;
                 cate = getperweek();
             }else if(a=="4"){
                 $("#onemon").css("background-color","#fff");
                 $("#onemon").css("color","#0070c9");
                 //url = 'https://api.huobipro.com/market/history/kline?period=1mon&size=6&symbol=elausdt&AccessKeyId=84feea99-fab3f46a-a15cc86f-fc178';
-                //url = 'http://cloudchat.io/quota/month.json';
-                $scope.quotadetailsuburl = 'http://cloudchat.io/quota/op.php?parm=month'+$scope.paramurl;;
+                //url = 'http://ela.chat/quota/month.json';
+                $scope.quotadetailsuburl = 'http://ela.chat/quota/op.php?parm=month'+$scope.paramurl;;
             var cate = ['2018-02','2018-03','2018-04','2018-05','2018-06','2018-07'];
                 //cate = catea.reverse();
             }else if(a=="5"){
                 $("#oneyear").css("background-color","#fff");
                 $("#oneyear").css("color","#0070c9");
                 //url = 'https://api.huobipro.com/market/history/kline?period=1year&size=6&symbol=elausdt&AccessKeyId=84feea99-fab3f46a-a15cc86f-fc178';
-                //url = 'http://cloudchat.io/quota/year.json';
-                $scope.quotadetailsuburl = 'http://cloudchat.io/quota/op.php?parm=year'+$scope.paramurl;;
+                //url = 'http://ela.chat/quota/year.json';
+                $scope.quotadetailsuburl = 'http://ela.chat/quota/op.php?parm=year'+$scope.paramurl;;
             var cate = ['2018'];
             }else{
                 $("#fifteenmin").css("background-color","#fff");
                 $("#fifteenmin").css("color","#0070c9");
                 //url = 'https://api.huobipro.com/market/history/kline?period=15min&size=6&symbol=elausdt&AccessKeyId=84feea99-fab3f46a-a15cc86f-fc178';
-                //url = 'http://cloudchat.io/quota/year.json';
-                $scope.quotadetailsuburl = 'http://cloudchat.io/quota/op.php?parm=min'+$scope.paramurl;;
+                //url = 'http://ela.chat/quota/year.json';
+                $scope.quotadetailsuburl = 'http://ela.chat/quota/op.php?parm=min'+$scope.paramurl;;
              var cate = ['2018'];
             }
             try {

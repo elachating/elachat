@@ -6,9 +6,9 @@ define(['app'],function(app){
     '$stateParams',
     '$location',
     '$http',
-    function($scope,$rootScope,$stateParams,$location,$http){
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$http,$translate){
 	$scope.meindexback = function(){
-		console.log("跳转！");
         $location.url("/me/index");
 	}
     $http({

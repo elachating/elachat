@@ -12,5 +12,5 @@ body{background-color:#fff;}
         <span style="font-size:20px;">{{data.title}}</span>
     </div>
     <div style="width:90%;margin-left:5%;height:auto;font-size:12px;color:#888;height:30px;line-height:30px;">{{data.create_time}}&nbsp;&nbsp;</div>
-    <div class="news_content" style="margin-top:15px;line-height:22px;">{{data.content}}</div>
+    <div class="news_content"  ng-bind-html="data.content|to_trusted"  style="margin-top:15px;line-height:22px;"></div>
 </div>

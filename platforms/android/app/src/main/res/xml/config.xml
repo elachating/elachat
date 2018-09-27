@@ -43,6 +43,13 @@
     <feature name="SpvwalletapiPlugin">
         <param name="android-package" value="org.apache.cordova.spvapi.SpvwalletapiPlugin" />
     </feature>
+    <feature name="RareloopAppVersion">
+        <param name="android-package" value="org.apache.cordova.appversion.RareloopAppVersion" />
+    </feature>
+    <feature name="AppUpdate">
+        <param name="android-package" value="org.apache.cordova.appupdate.CheckAppUpdate" />
+        <param name="onload" value="true" />
+    </feature>
     <name>CloudChat</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -70,13 +77,11 @@
 
         <!-- you can use any density that exists in the Android project -->
         <splash src="res/splash-port-hdpi/screen.png" density="port-hdpi"/>
-       <!--
         <splash src="res/splash-port-ldpi/screen.png" density="port-ldpi"/>
         <splash src="res/splash-port-mdpi/screen.png" density="port-mdpi"/>
         <splash src="res/splash-port-xhdpi/screen.png" density="port-xhdpi"/>
         <splash src="res/splash-port-xxhdpi/screen.png" density="port-xxhdpi"/>
         <splash src="res/splash-port-xxxhdpi/screen.png" density="port-xxxhdpi"/>
-        -->
     </platform>
     <preference name="loglevel" value="DEBUG" />
     <feature name="QRScanner">

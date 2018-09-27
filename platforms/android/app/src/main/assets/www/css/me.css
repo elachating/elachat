@@ -165,7 +165,7 @@ transform:rotate(90deg);
 
 /*FEEDBACK*/
 
-.feedback{width:100%;height:auto;margin-top:45px;background:#fff}
+.feedback{width:100%;height:auto;margin-top:45px;background:#fff;padding-bottom:40px;}
 .feedback ul{width:90%;height:auto;padding-top:50px;margin-left:5%}
 .feedback li{width:100%;height:40px;border-bottom:1px #eeeeee solid}
 .feedback li span{float:left;width:15%;height:40px;line-height:40px;text-align:right;display:block;}
@@ -173,7 +173,7 @@ transform:rotate(90deg);
 .feedback ._content{height:100px;}
 .feedback ._content textarea{height:90px;width:84%;border:none;padding-top:10px;padding-left:1%}
 .feedback ._submit{padding-top:50px;}
-.feedback ._submit input {width:80%;height:40px;background:#0070c9;color:#fff;margin-left:10%;border:none;font-size:14px;font-family: "Microsoft YaHei"!important;}
+.feedback ._submit input {border-radius:4px;width:80%;height:40px;background:#0070c9;color:#fff;margin-left:10%;border:none;font-size:14px;font-family: "Microsoft YaHei"!important;}
 
 
 

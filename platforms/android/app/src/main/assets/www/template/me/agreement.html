@@ -1,10 +1,8 @@
 <div class="common_top">
     <div class="common_top_l"><i class="iconfont padcs" ng-click="meindexback_agree()">&#xe508;</i></div>
-    <div class="common_top_m">许可协议</div>
+    <div class="common_top_m">{{"me_update_license"|translate}}</div>
     <div class="common_top_r">
     </div>
 </div>
-<div class="agreement">
-    <div class="title">许可协议</div>
-    <div class="content">许可协议内容</div>
+<div class="agreement" style="padding-left:5%;padding-right:5%;width:90%;padding-top:20px;" ng-bind-html="data.content|to_trusted" >
 </div>

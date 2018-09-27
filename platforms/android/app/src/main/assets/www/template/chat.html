@@ -21,7 +21,7 @@
             <div class="user_face_icon">
                 <i class="iconfont" id="showtalktn" curstatus="1" ng-click="showtalkbtn()">&#xe68b;</i>
             </div>
-            <input class="cinput" id="contents" ng-change="judge()" ng-model="myValue" type="text" placeholder="说点什么吧...">
+            <input class="cinput" id="contents" ng-change="judge()" ng-model="myValue" type="text" placeholder='{{"chat_index_tip"|translate}}'>
             <button class="cbutton" id="talkbtn" >按住说话</button>
             <div class="r_icon">
                 <button  id="send" ng-click="sendinfo()">发送</button>
@@ -36,6 +36,6 @@
             <div class="fsubmenu"><img ng-click="sendfile()" src="img/filetran.png"/></div>
             -->
         </div>
-        <div id="offline" style="display:none;width:100%;height:60px;line-height:60px;color:#0070c9;background-color:#e5e5e5;text-align:center;font-size:16px;">好友不在线</div>
+        <div id="offline" style="display:none;width:100%;height:60px;line-height:60px;color:#0070c9;background-color:#e5e5e5;text-align:center;font-size:16px;">{{"chat_index_offline"|translate}}</div>
     </div>
 </div>
