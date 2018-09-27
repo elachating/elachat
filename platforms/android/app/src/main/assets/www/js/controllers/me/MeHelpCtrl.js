@@ -6,7 +6,8 @@ define(['app'],function(app){
     '$stateParams',
     '$location',
     '$http',
-    function($scope,$rootScope,$stateParams,$location,$http){
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$http,$translate){
         $scope.meindexback_help =  function(){
           $location.url('/me/index');
         }
@@ -24,7 +25,7 @@ define(['app'],function(app){
         });
 
         $scope.jumpdetail = function(id){
-             $location.url('/me/news_detail?id='+id);
+             $location.url('/me/helpdetail?id='+id);
         }
   }]);
 });

@@ -5,7 +5,8 @@ define(['app'],function(app){
     '$rootScope',
     '$stateParams',
     '$location',
-    function($scope,$rootScope,$stateParams,$location){
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$translate){
         $scope.showapp = function(){
             navigator.webtoast.showtoast("暂无应用！",1);
         }
@@ -14,13 +15,6 @@ define(['app'],function(app){
         }
         $scope.jumpwalletimport =  function(){
           $location.url('/asset/wallet_import');
-          /*
-           // window.webspvwalletapi.exportwalletpkey(function(successa){
-               console.log("私钥文件内容："+successa);
-           },function(errora){
-               console.log("错误"+errora);
-           },"2222222a","1234567a");
-           */
         }
   }]);
 });

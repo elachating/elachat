@@ -1,6 +1,6 @@
 <div class="common_top">
     <div class="common_top_l"><i class="iconfont padcs" ng-click="meindexback_feed()">&#xe508;</i></div>
-    <div class="common_top_m">信息反馈</div>
+    <div class="common_top_m">{{"me_feedback_title"|translate}}</div>
     <div class="common_top_r">
     </div>
 </div>
@@ -8,24 +8,24 @@
 </div>
 <div class="feedback">
     <ul>
-        <li style="list-style:none; ">
-            <span>标题：</span>
-            <input type="text" ng-model = "title" placeholder="请输入标题"/>
+        <li style="list-style:none;padding-top:5px;padding-bottom:10px;border:0px;">
+            <span>{{"me_feedback_inform_tip_title"|translate}}：</span>
+            <input type="text" ng-model = "title" style="width:80%;border:1px solid #d9d9d9;" placeholder='&nbsp;&nbsp;{{"me_feedback_inform_title"|translate}}'/>
         </li>
-        <li class="_content"  style="list-style:none; ">
-            <span>内容：</span>
-            <textarea ng-model = "content" placeholder="请输入内容"></textarea>
+        <li class="_content"  style="list-style:none;padding-top:5px;padding-bottom:10px;border:0px;">
+            <span>{{"me_feedback_inform_tip_content"|translate}}：</span>
+            <textarea ng-model = "content" style="width:80%;border:1px solid #d9d9d9;" placeholder='&nbsp;&nbsp;{{"me_feedback_inform_content"|translate}}'></textarea>
         </li>
-        <li  style="list-style:none; ">
-            <span>邮箱：</span>
-            <input type="text" ng-model = "email" placeholder="请输入您的邮箱"/>
+        <li  style="list-style:none; padding-top:5px;padding-bottom:10px;border:0px;">
+            <span>{{"me_feedback_inform_tip_email"|translate}}：</span>
+            <input type="text" ng-model = "email" style="width:80%;border:1px solid #d9d9d9;" placeholder='&nbsp;&nbsp;{{"me_feedback_inform_email"|translate}}'/>
         </li>
-        <li  style="list-style:none; ">
-            <span>电话：</span>
-            <input type="text" ng-model = "phone" placeholder="请输入您的电话"/>
+        <li  style="list-style:none; padding-top:5px;padding-bottom:10px;border:0px;">
+            <span>{{"me_feedback_inform_tip_tel"|translate}}：</span>
+            <input type="text" ng-model = "phone" style="width:80%;border:1px solid #d9d9d9;" placeholder='&nbsp;&nbsp;{{"me_feedback_inform_tel"|translate}}'/>
         </li>
-        <li class="_submit" style="list-style:none;">
-            <input type="button" ng-click = "submit()" value="提交"/>
+        <li class="_submit" style="border-bottom:0px;list-style:none;">
+            <input type="button" style="height:40px;" ng-click = "submit()" value='{{"me_feedback_inform_submit"|translate}}'/>
         </li>
     </ul>
 </div>

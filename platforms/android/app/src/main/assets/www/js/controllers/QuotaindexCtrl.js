@@ -6,8 +6,19 @@ define(['app'],function(app){
     '$state',
     '$stateParams',
     '$interval',
+    '$http',
     '$location',
-    function($scope,$rootScope,$state,$stateParams,$interval,$location){
+    function($scope,$rootScope,$state,$stateParams,$interval,$http,$location){
+        $http({
+                method: 'GET',
+                url: 'https://ela.chat/version/up.json'
+            }).then(function successCallback(response) {
+                if(AppVersion.build!=response.data){
+                       $scope.upred = true;
+                }
+            }, function errorCallback(response) {
+                console.log(response)
+            });
         $scope.showapp = function(){
             navigator.webtoast.showtoast("暂无应用！",1);
         }
@@ -39,8 +50,7 @@ define(['app'],function(app){
 			if(symbollist!="|" && symbollist!=""){
 				symbollist= symbollist.substring(1);
 			}
-			//urla = "http://cloudchat.io/quota/init.php?symbol="+symbollist;
-			$scope.quotaurl = "http://cloudchat.io/quota/init.php?symbol="+symbollist;
+			$scope.quotaurl = "http://ela.chat/quota/init.php?symbol="+symbollist;
             $.getJSON($scope.quotaurl, function (data) {
 				if(data.status !== "ok") {
 						console.log("读取数据失败！");
@@ -49,7 +59,6 @@ define(['app'],function(app){
 				}
 				data = data.tick;
 				for(var j=0;j<data.length;j++){
-					//console.log("#"+data[j]['maincoin']+"_"+data[j]['subcoin']+"_aprice");
 					$("#"+data[j]['maincoin']+"_"+data[j]['subcoin']+"_aprice").html(data[j]['aprice']);
 					$("#"+data[j]['maincoin']+"_"+data[j]['subcoin']+"_rprice").html("￥"+data[j]['rprice']);
 					$("#"+data[j]['maincoin']+"_"+data[j]['subcoin']+"_market").html(data[j]['market']);
@@ -74,7 +83,7 @@ define(['app'],function(app){
                 if(symbollist!="|" && symbollist!=""){
                     symbollist= symbollist.substring(1);
                 }
-                $scope.quotaurl = "http://cloudchat.io/quota/init.php?symbol="+symbollist;
+                $scope.quotaurl = "http://ela.chat/quota/init.php?symbol="+symbollist;
                 $.getJSON($scope.quotaurl, function (data) {
                     if(data.status !== "ok") {
                             //console.log("读取数据失败！");

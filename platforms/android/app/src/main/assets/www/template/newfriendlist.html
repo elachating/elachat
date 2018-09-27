@@ -8,15 +8,15 @@
 <ul class="main_newfriendlist_personlist">
 <li  ng-repeat="nfriend in nfriendlist">
 	<div>
-		<img src="img/boydefault.png"  ng-click="jumpdetail({{nfriend.userid}})" />
+		<img src="img/boydefault.png"  />
 	</div>
 	<div>
 		<p><span style="width:70%;display:block;float:left;">UID：<span style="font-size:10px;">{{nfriend.userid}}</span></span></p>
-		<p><span style="width:70%;display:block;float:left;overflown:hidden;">{{"newfriendlist_remark"|transalate}}：{{nfriend.message}}</span>
+		<p><span style="width:70%;display:block;float:left;overflown:hidden;">{{"newfriendlist_remark"|translate}}：{{nfriend.message}}</span>
 		<button  style="float:right;width:20%;height:30px;line-height:30px;color:#fff;border:0px;background-color:#0070c9;" ng-if="nfriend.yn == '0'"   ng-click="acceptbtn(nfriend.userid)" >
-		{{"newfriendlist_accept"|transalate}}
+		{{"newfriendlist_accept"|translate}}
 		</button>
-		<span style="float:right;color:#555;" ng-if="nfriend.yn == '1'">{{"newfriendlist_added"|transalate}}</span>   </p>
+		<span style="float:right;color:#555;" ng-if="nfriend.yn == '1'">{{"newfriendlist_added"|translate}}</span>   </p>
 	</div>
 </li>
 </ul>

@@ -5,36 +5,32 @@
 	</div>
 </div>
 <div style="width:100%;height:210px;background-color:#0070c9;overflow:hidden;">
-	<div style="margin-top:50px;width:100%;height:65px;line-height:65px;text-align:center;font-size:30px;color:#fff;">cloudChat</div>
-	<p style="font-size:16px;text-align:center;height:30px;line-height:30px;width:100%;color:#fff;font-family:'KaiTi';">创建你的第一个亦来云钱包</p>
+	<div style="margin-top:50px;width:100%;height:65px;line-height:65px;text-align:center;font-size:30px;color:#fff;">ElaChat</div>
+	<p style="font-size:16px;text-align:center;height:30px;line-height:30px;width:100%;color:#fff;font-family:'KaiTi';">{{"wallet_init_index_title"|translate}}</p>
 </div>
 <div class="walletinit" style="width:100%;padding:0px;margin:0px;margin-top:70px;">
 	<button style="font-size:16px;border:0px;border-radius:4px;margin-left:15%;width:70%;height:45px;line-height:45px;text-align:center;color:#fff;background-color:#0070c9;" ng-click="jumpwalletcreate()">
-			创建钱包
+		{{"wallet_init_index_create_wallet"|translate}}
 	</button>
 	<button style="font-size:16px;margin-top:40px;border-radius:4px;border:0px;margin-left:15%;width:70%;height:45px;line-height:45px;text-align:center;color:#fff;background-color:#0070c9;"  ng-click="jumpwalletimport()">
-			导入钱包
+		{{"wallet_init_index_import_wallet"|translate}}
 	</button>
 </div>
 <div class="common_footer">
 	<div ui-sref="index">
 		<i class="iconfont">&#xe624;</i>
-		<p>消息</p>
+		<p>{{"f_message"|translate}}</p>
 	</div>
 	<div ui-sref="quota">
 		<i class="iconfont">&#xe63c;</i>
-		<p>行情</p>
+		<p>{{"f_quota"|translate}}</p>
 	</div>
-	<div ng-click="showapp()">
-		<i class="iconfont"  style="color:#0070c9;">&#xe61a;</i>
-		<p>应用</p>
-	</div>
-	<div  ui-sref="asset">
-		<i class="iconfont">&#xe65e;</i>
-		<p>资产</p>
+	<div>
+		<i class="iconfont" style="color:#0070c9;">&#xe65e;</i>
+		<p>{{"f_asset"|translate}}</p>
 	</div>
 	<div  ui-sref="me">
 		<i class="iconfont">&#xe63d;</i>
-		<p>我的</p>
+		<p>{{"f_me"|translate}}</p>
 	</div>
 </div>

@@ -37,6 +37,8 @@ define(['app'],function(app){
             //chainid,contents,phrasePassword,paypassword,lang
 			window.webspvwalletapi.importmono(function(success){
 				if(success=="1"){
+				    window.localStorage.walletname="ELA";
+					window.localStorage.walletyn = "1";
 					navigator.webtoast.showtoast("导入成功！",1);
 					$state.go("asset");
 				}else{
@@ -63,6 +65,8 @@ define(['app'],function(app){
             }
 			window.webspvwalletapi.importkeyfile(function(success){
 				if(success=="1"){
+				    window.localStorage.walletname="ELA";
+					window.localStorage.walletyn = "1";
 					navigator.webtoast.showtoast("导入成功！",1);
 					$state.go("asset");
 				}else{

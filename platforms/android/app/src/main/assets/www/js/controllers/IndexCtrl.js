@@ -5,19 +5,62 @@ define(['app'],function(app){
     '$rootScope',
     '$location',
     '$state',
+    'ngDialog',
+    '$http',
     '$translate',
-    function($scope,$rootScope,$location,$state,$translate){
-       // $scope.message_title = $translate.instant('new_message_title');
+    function($scope,$rootScope,$location,$state,ngDialog,$http,$translate){
         document.addEventListener("deviceready",function(){
-            console.log("deviceready");
             document.addEventListener("backbutton", function(){
+                console.log("当前地址："+ $location.url());
                 if($location.url()=="/" || $location.url()=="/me/index" || $location.url()=="/quotaindex" || $location.url()=="/asset"){
                      navigator.app.exitApp();
-                }else{
+                }else if($location.url()=="/asset/walletphrase_next"){
+                        navigator.webtoast.showtoast("请点击右上角关闭！",1);
+                       /*
+                        ngDialog.open({
+                         template: '<div style="width:100%;height:30px;border-bottom:1px solid #e5e5e5;><h4 class="modal-title">提示</h4></div>' +
+                                   '<div class="modal-body" style="width:100%;height:100px;color:#444;line-height:100px;text-align:center;font-weight:800;font-size:14px;">&nbsp;确定退出确认助记词？</div>'+
+                                   '<div class="modal-footer" style="width:80%;height:60px;margin-left:10%;padding-top:10px;padding-bottom:20px;">'+
+                                   '<button type="button" style="margin:0px;float:left;font-size:14px;border:0px;border-radius:3px;width:30%;margin-left:10%;height:40px;line-height:40px;background-color:#0070c9;color:#fff;text-align:center;" class="btn" ng-click="confirms()" >确定</button>'+
+                                   '<button type="button" style="margin:0px;float:left;margin-left:20%;font-size:14px;border:0px;border-radius:3px;width:30%;height:40px;line-height:40px;background-color:#0070c9;color:#fff;text-align:center;" class="btn" ng-click="canclenbtns()" >取消</button>'+
+                                   '</div>',
+                        plain:true,
+                                 className: 'ngdialog-theme-default',
+                                 width:'80%',
+                                 scope: $scope,
+                                 controller: function ($scope) {
+                                     $scope.confirms = function () {
+                                            console.log("删除");
+                                            $scope.closeThisDialog();
+
+                                             history.go(-2);
+                                            //$location.url("/asset/wallet_create");
+                                     };
+                                     $scope.canclenbtns = function () {
+                                            $scope.closeThisDialog();
+                                     };
+                                 }
+                        });
+                    */
+                 }else if($location.url()=="/me/security/index"){
+                    // $location.url("/me/index");
+                    $state.go('me');
+                  }else{
                       history.back();
                   }
             }, false);
         },false);
+
+        $http({
+                method: 'GET',
+                url: 'https://ela.chat/version/up.json'
+            }).then(function successCallback(response) {
+                if(AppVersion.build!=response.data){
+                       $scope.upred = true;
+                }
+            }, function errorCallback(response) {
+                console.log(response)
+            });
          window.webcarrierapi.myinfo(function(successful){
              window.webdbapi.newmessage(function(success){
                  var obj = eval('(' + success + ')');
@@ -60,7 +103,8 @@ define(['app'],function(app){
              $state.go('chat', {fuid:fuid,nickname:""});
         }
         $scope.showapp = function(){
-            navigator.webtoast.showtoast("暂无应用！",1);
+           // navigator.webtoast.showtoast("暂无应用！",1);
+             $state.go('wallet_init');
         }
         /*
         window.webspvwalletapi.creatememwords(function(success){

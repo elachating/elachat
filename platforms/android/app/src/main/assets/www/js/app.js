@@ -22,7 +22,6 @@ app.directive("compileBindExpn", function ($compile) {
     return function linkFn(scope, elem, attrs) {
         scope.$watch("::"+attrs.compileBindExpn, function (html) {
             if (html && html.indexOf("<") != -1 && html.indexOf(">") != -1) {
-                console.log(1);
                 var expnLinker = $compile(html);
                 expnLinker(scope, function transclude (clone) {
                     elem.empty();
@@ -38,7 +37,12 @@ app.directive("compileBindExpn", function ($compile) {
 app.config(function ($translateProvider) {
  //var lang = window.localStorage.lang||'en';
  //$translateProvider.preferredLanguage(lang);
-$translateProvider.preferredLanguage('en');
+
+ if (window.localStorage.lang === undefined || window.localStorage.lang === 'undefined') {
+        $translateProvider.preferredLanguage('en');
+    } else {
+        $translateProvider.preferredLanguage(window.localStorage.lang);
+    }
 $translateProvider.useStaticFilesLoader({
     files: [{
         prefix: 'i18n/',
@@ -279,6 +283,14 @@ app.config(function(
         controller: "MeHelpCtrl",
         resolve: {
             deps:app.loadControllerJs('./controllers/me/MeHelpCtrl')
+        }
+    })
+    $stateProvider.state('me_helpdetail', {
+        url: "/me/helpdetail",
+        templateUrl: "template/me/helpdetail.html",
+        controller: "MeHelpDetailCtrl",
+        resolve: {
+            deps:app.loadControllerJs('./controllers/me/MeHelpDetailCtrl')
         }
     })
     $stateProvider.state('me_feedback', {

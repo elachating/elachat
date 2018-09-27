@@ -5,8 +5,8 @@ define(['app'],function(app){
     '$rootScope',
     '$stateParams',
     '$location',
-    function($scope,$rootScope,$stateParams,$location){
-      //service.config($rootScope);
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$translate){
       $scope.meindexback_security = function(){
         $location.url("/me/index");
       }

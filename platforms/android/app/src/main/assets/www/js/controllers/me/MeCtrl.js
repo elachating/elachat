@@ -5,10 +5,27 @@ define(['app'],function(app){
     '$rootScope',
     '$stateParams',
     '$location',
+    '$http',
     '$translate',
-    function($scope,$rootScope,$stateParams,$location,$translate){
+    function($scope,$rootScope,$stateParams,$location,$http,$translate){
+        $http({
+                method: 'GET',
+                url: 'https://ela.chat/version/up.json'
+            }).then(function successCallback(response) {
+                if(AppVersion.build!=response.data){
+                       $scope.upred = true;
+                }
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+
         $scope.jumpwallet =  function(){
-          $location.url('/me/wallet/index');
+
+          if (window.localStorage.walletyn === undefined || window.localStorage.walletyn === 'undefined') {
+               navigator.webtoast.showtoast($translate.instant("me_wallet_index_wallet_manage"),1);
+          }else{
+               $location.url('/me/wallet/index');
+          }
         }
         $scope.jumpsecurity =  function(){
           $location.url('/me/security/index');

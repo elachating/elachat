@@ -6,13 +6,11 @@ define(['app'],function(app){
     '$stateParams',
     '$location',
     '$state',
-    function($scope,$rootScope,$stateParams,$location,$state){
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$state,$translate){
         $scope.backwalletmainofdetail= function(){
-          //$location.url('/asset');
-         // $location.url('/asset/wallet_transactiondetail');
           $state.go('wallet_main', {chainida:$stateParams.chainidd});
         }
-        //console.log("比重："+$stateParams.chainidd+"交易ID"+$stateParams.txid+"顺序："+$stateParams.noid);
         window.webspvwalletapi.trandetail(function(successd){
            var result =  eval('(' + successd + ')');
            $scope.zzsum = result['amount'];
@@ -24,34 +22,33 @@ define(['app'],function(app){
            $scope.blockheight = result['blockheight'];
            $scope.zztranferid = result['txhash'];
            if(result['inorout']=="in"){
-             $("#foriadr").html("输入地址：");
+             $("#foriadr").html($translate.instant("wallet_translatedetail_transfrom_inputadr"));
              if(result['confirmstatus']=="Confirmed"){
                     $("#curtxidstatus").html("&#xe8d7;");
                     $("#curtxidstatus").css("background-color","#009933");
-                    $("#txidstatustxt").html("收款成功");
+                    $("#txidstatustxt").html($translate.instant("wallet_translatedetail_transfrom_receive_success"));
              }else{
                     $("#curtxidstatus").html("&#xe680;");
-                    $("#txidstatustxt").html("确认中");
+                    $("#txidstatustxt").html($translate.instant("wallet_translatedetail_transfrom_confirming"));
              }
            }else{
-             $("#foriadr").html("输出地址：");
+             $("#foriadr").html($translate.instant("wallet_translatedetail_transfrom_outputadr"));
              if(result['confirmstatus']=="Confirmed"){
                     $("#curtxidstatus").html("&#xe8d7;");
                     $("#curtxidstatus").css("background-color","#009933");
-                    $("#txidstatustxt").html("转账成功");
+                    $("#txidstatustxt").html($translate.instant("wallet_translatedetail_transfrom_transform_success"));
              }else{
                     $("#curtxidstatus").html("&#xe680;");
-                    $("#txidstatustxt").html("确认中");
+                    $("#txidstatustxt").html($translate.instant("wallet_translatedetail_transfrom_confirming"));
              }
            }
-           //https://blockchain.elastos.org/tx/617516f53c89f3e5523b07a44bb37ee1d8a758cf91a46bf0129278a1d7a9bef4
             var qrcode = new QRCode(document.getElementById("txidqrcode"), {
                 width : 100,
                 height : 100
             });
             qrcode.makeCode("https://blockchain.elastos.org/tx/"+result['txhash']);
         },function(erron){
-            console.log("获取交易信息失败！");
+           // console.log("获取交易信息失败！");
         },$stateParams.chainidd,$stateParams.txid,$stateParams.noid);
   }]);
 });

@@ -32,7 +32,7 @@ public class SpvwalletapiPlugin extends CordovaPlugin {
     private IMasterWallet mCurrentMasterWallet;
     private IDidManager mDidManager = null;
     private MasterWalletManager mWalletManager;
-    String language = "chinese";
+    //String language = "chinese";
     private ArrayList<IMasterWallet> mMasterWalletList = new ArrayList<IMasterWallet>();
     private Map<String, ISubWallet> mSubWalletMap = new HashMap<String, ISubWallet>();
     private String mRootPath = null;
@@ -63,7 +63,7 @@ public class SpvwalletapiPlugin extends CordovaPlugin {
         if ("creatememwords".equals(action)) {
             try {
                 try {
-                    String mnemonic = mWalletManager.GenerateMnemonic(language);
+                    String mnemonic = mWalletManager.GenerateMnemonic(args.getString(0));
                     callbackContext.success(mnemonic);
                 } catch (WalletException e) {
                     e.printStackTrace();
@@ -94,6 +94,7 @@ public class SpvwalletapiPlugin extends CordovaPlugin {
             try {
                 mCurrentMasterWallet = mWalletManager.CreateMasterWallet(args.getString(0), args.getString(1), args.getString(2)
                         , args.getString(3), args.getString(4));
+                //mWalletManager.CreateMasterWallet("","");
                 createsubwallet("ELA", args.getString(3), false, 10000);
             } catch (WalletException e) {
                 e.printStackTrace();
@@ -317,12 +318,12 @@ public class SpvwalletapiPlugin extends CordovaPlugin {
         } else if ("removewallet".equals(action)) {
             try {
                 String yn = delwallet();
-                callbackContext.success(yn);
-                return true;
+                callbackContext.success();
+                //return false;
             } catch (Exception e) {
                 e.printStackTrace();
                 callbackContext.error("0");
-                return true;
+                //return true;
             }
         }
         return super.execute(action, args, callbackContext);
@@ -557,8 +558,17 @@ public class SpvwalletapiPlugin extends CordovaPlugin {
     }
     //删除钱包
     public String delwallet(){
+        try{
+            System.out.println("删除成功！");
+            mWalletManager.DestroyWallet("那你就叫");
+            //mCurrentMasterWallet.DestroyWallet();
+        } catch (WalletException paramJSONArray)
+        {
+            paramJSONArray.printStackTrace();
+            System.out.println("删除！"+ paramJSONArray.GetErrorInfo());
 
-        mWalletManager.DestroyWallet("ELA");
+            //paramCallbackContext.success(parseOneParam("ERRORCODE", paramJSONArray.GetErrorInfo()));
+        }
         return "1";
     }
 }

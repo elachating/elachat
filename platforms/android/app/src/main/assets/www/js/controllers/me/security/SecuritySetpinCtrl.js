@@ -5,20 +5,19 @@ define(['app'],function(app){
     '$rootScope',
     '$stateParams',
     '$location',
-    function($scope,$rootScope,$stateParams,$location){
-      //service.config($rootScope);
+    '$translate',
+    function($scope,$rootScope,$stateParams,$location,$translate){
         var pin_store = localStorage.getItem("PIN");
         var set = true;
         if(pin_store){
-            $scope.pin_tip = "请输入PIN码"
+            $scope.pin_tip = $translate.instant("me_security_pin_tip");
         }else{
-            $scope.pin_tip = "请设置PIN码"
+            $scope.pin_tip = $translate.instant("me_security_pinset_tip");
         }
 
         var num = [];
         var confirmnum = [];
         $scope.addnum =  function(){
-            console.log("addnum");
             var poingui = document.getElementById("pointui");
             var margin = parseInt(pointui.style.marginLeft);
             if(margin < -12){
@@ -27,7 +26,6 @@ define(['app'],function(app){
                 console.log(num);
             }
             if(num.length == 6){
-                //
                 pointui.style.marginLeft = "-102px";
                 $scope.confirmpin();
             }
@@ -50,34 +48,29 @@ define(['app'],function(app){
             if(set){
                 if(pin_store){
                     if(num.join('') == pin_store){
-                        console.log("设置新的PIN");
-                        $scope.pin_tip = "请设置新的PIN";
+                        $scope.pin_tip = $translate.instant("me_security_pinset_tip");
                         localStorage.setItem("PIN",'');
                     }else{
-                        alert("PIN错误");
+			            navigator.webtoast.showtoast($translate.instant("me_security_pinset_error_tip"),1);
                         $location.url('/me/security/index');
                     }
 
 
                  }else{
-                    $scope.pin_tip = "请重复输入PIN码"
+                    $scope.pin_tip = $translate.instant("me_security_repinset_tip");
                     confirmnum = num;
-                    //localStorage.setItem("PIN",num);
                     set = false;
                  }
-
-
             }else{
-
-                console.log("confirmnum = " + confirmnum);
-                console.log("num = " + num);
                 if(confirmnum.join('') == num.join('')){
-                    alert("PIN设置成功");
+                    //alert("PIN设置成功");
+                    navigator.webtoast.showtoast($translate.instant("me_security_pinset_success_tip"),1);
                     localStorage.setItem("PIN",num.join(''));
                     $location.url('/me/security/index');
                 }else{
-                    alert("重复PIN错误");
-                    $scope.pin_tip = "请设置PIN码";
+                   // alert("重复PIN错误");
+                    navigator.webtoast.showtoast($translate.instant("me_security_repinset_error_tips"),1);
+                    $scope.pin_tip = $translate.instant("me_security_pinset_tip");
                     confirmnum = [];
                     set = true;
                 }

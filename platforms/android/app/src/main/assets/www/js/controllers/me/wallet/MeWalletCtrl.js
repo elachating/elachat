@@ -2,12 +2,13 @@ define(['app'],function(app){
   'use strict';
   app.register.controller('MeWalletCtrl',[
     '$scope',
+    '$state',
     '$rootScope',
     '$stateParams',
     '$location',
 	'ngDialog',
 	'$translate',
-    function($scope,$rootScope,$stateParams,$location,ngDialog,$translate){
+    function($scope,$state,$rootScope,$stateParams,$location,ngDialog,$translate){
         $scope.meindexbacks =  function(){
             $location.url('/me/index');
         }
@@ -36,12 +37,13 @@ define(['app'],function(app){
 						 $scope.confirm = function () {
 								$scope.closeThisDialog();
                                 window.webspvwalletapi.removewallet(function(success){
-                                    if(success == "1"){
+                                    //if(success == "1"){
                                         navigator.webtoast.showtoast($translate.instant("me_wallet_index_delwallet_tip_successful"),1);
-
-                                    }else{
-                                       navigator.webtoast.showtoast($translate.instant("me_wallet_index_delwallet_tip_error"),1);
-                                    }
+                                        window.localStorage.removeItem("walletyn");
+                                        $state.go("wallet_init");
+                                    //}else{
+                                     //  navigator.webtoast.showtoast($translate.instant("me_wallet_index_delwallet_tip_error"),1);
+                                    //}
                                 },function(error){
                                     // console.log("错误"+error);
                                 });

@@ -21,12 +21,13 @@ define(['app'],function(app){
         }
         $http({
             method: 'POST',
-            url: 'http://192.168.0.105/public/index.php/me/feed/index',
+            url: 'http://121.42.196.42:91/public/index.php/me/feed/index',
             data: {"title":$scope.title,"content":$scope.content,"email":$scope.email,"phone":$scope.phone}
         }).then(function successCallback(response) {
             console.log("responsedata = "+response.data.msg)
             if(response.data.code == "1"){
                 navigator.webtoast.showtoast("信息提交成功！",1);
+                $location.url("/me/index");
             }else{
                 navigator.webtoast.showtoast("信息提交失败！",1);
             }

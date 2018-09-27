@@ -2,13 +2,13 @@ cordova.define("cordova-plugin-spvwalletapi.SpvwalletapiPlugin",
     function(require, exports, module) {
         var exec = require("cordova/exec");
         module.exports = {
-            creatememwords: function(success,error){
+            creatememwords: function(success,error,language){
                 exec(
                     success,
                     error,
                 "SpvwalletapiPlugin",//feature name
                 "creatememwords",//action
-                []//要传递的参数，json格式
+                [language]//要传递的参数，json格式
                 );
             },
             getallmasterwallet: function(success,error){
