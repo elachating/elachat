@@ -1,0 +1,20 @@
+<div class="common_top">
+    <div class="common_top_l"><i class="iconfont padcs" ng-click="meindexback_help()">&#xe508;</i></div>
+    <div class="common_top_m">{{"me_help_title"|translate}}</div>
+    <div class="common_top_r"></div>
+</div>
+<div class="newslist">
+    <ul>
+        <li ng-repeat="item in data" ng-click="jumpdetail(item.id)" style="list-style:none; ">
+            <div>
+
+            </div>
+            <div>
+                {{item.title}}
+            </div>
+            <div>
+
+            </div>
+        </li>
+    </ul>
+</div>

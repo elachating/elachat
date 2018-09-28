@@ -1,0 +1,4 @@
+#Fri Sep 28 14:44:27 CST 2018
+base.0=F\:\\cloudchat\\cloudchat\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\134
+renamed.0=classes.dex
+file.0=F\:\\cloudchat\\cloudchat\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\134\\classes.dex

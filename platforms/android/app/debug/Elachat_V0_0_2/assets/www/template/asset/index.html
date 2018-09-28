@@ -1,0 +1,45 @@
+<div class="common_top">
+	<div class="common_top_l"></div>
+	<div class="common_top_m" ng-bind="walletname"></div>
+	<div class="common_top_r">
+		<!--
+		<i class="iconfont padcs" ng-click="jumpwalletlist()">&#xe71f;</i>
+		-->
+	</div>
+</div>
+	<div style="box-shadow: 2px 2px 3px #d9d9d9;background-color:#fff;width:94%;margin-left:3%;height:130px;margin-top:70px;border:1px solid #f1f1f1;border-radius:4px;">
+		<div style="width:100%;height:70px;text-align:center;line-height:70px;">
+			<i class="iconfont" style="font-size:40px;color:#0070c9;">&#xe614;</i>
+		</div>
+		<div style="width:100%;height:20px;line-height:20px;text-align:center;font-size:12px;">{{"asset_index_t"|translate}}</div>
+		<div style="width:100%;height:40px;line-height:30px;font-size:10px;text-align:center;color:#333;"><span style="font-size:20px;color:#333" id="allsums">≈ 0.00 CNY</span></div>
+	</div>
+<div class="assetlist">
+	<ul>
+		<li ng-repeat="item in data" ng-click="jumpassetdetail(item.chainid)" style = "list-style:none">
+			<div>
+				<span style="margin-top:10px;float:left;margin-left:25px;display:block;width:40px;height:40px;border-radius:20px;background-color:#0070c9;background-image:url('img/elalogo.png');background-position:5px 8px;background-size:30px;background-repeat:no-repeat;"></span>
+				<span style="float:left;width:100px;height:40px;display:block;">&nbsp;&nbsp;{{item.chainid}}</span>
+			</div>
+			<div class="cbalance" chainn="{{$item.chainid}}">{{item.balance}}&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		</li>
+	</ul>
+</div>
+<div class="common_footer">
+	<div ui-sref="index">
+		<i class="iconfont">&#xe624;</i>
+		<p>{{"f_message"|translate}}</p>
+	</div>
+	<div ui-sref="quota">
+		<i class="iconfont">&#xe63c;</i>
+		<p>{{"f_quota"|translate}}</p>
+	</div>
+	<div  ui-sref="asset">
+		<i class="iconfont"  style="color:#0070c9;">&#xe65e;</i>
+		<p>{{"f_asset"|translate}}</p>
+	</div>
+	<div  ui-sref="me">
+		<i class="iconfont">&#xe63d;</i>
+		<p>{{"f_me"|translate}}<i class="iconfont" ng-show="upred" style="font-size:7px;color:red;">&#xe58f;</i></p>
+	</div>
+</div>

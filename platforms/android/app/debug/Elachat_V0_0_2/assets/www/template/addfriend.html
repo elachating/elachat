@@ -1,0 +1,28 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="jumpfriendlist()">&#xe508;</i></div>
+	<div class="common_top_m">{{"addfriend_title"|translate}}</div>
+	<div class="common_top_r">
+		<i class="iconfont padcs" ng-click="scanbtn()" style="font-size:26px;">&#xe607;</i>
+	</div>
+</div>
+<div class="main_addfriend">
+<ul class="main_addfriend_ul">
+<li>
+	<div>
+		<div>UADR：</div>
+		<div><input type="text" ng-model="upid" class="uid" id="upid" placeholder='&nbsp;{{"addfriend_uadr_tip"|translate}}' /></div>
+	</div>
+</li>
+<li>
+	<div>
+		<div>{{"addfriend_remark"|translate}}：</div>
+		<div><input type="text"  ng-model="uremark"  class="uid" id="uremark" placeholder='&nbsp;{{"addfriend_remark_tip"|translate}}' /></div>
+	</div>
+</li>
+<li>
+	<div>
+		<button id="addfriendbtn" ng-click="finish()"  >{{"addfriend_finish_btn"|translate}}</button>
+	</div>
+</li>
+</ul>
+</div>

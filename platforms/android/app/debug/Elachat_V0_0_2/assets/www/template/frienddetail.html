@@ -1,0 +1,25 @@
+<div class="common_top">
+	<div class="common_top_l"  ng-click="jumpcontactindex()"><i class="iconfont padcs" >&#xe508;</i></div>
+	<div class="common_top_m" ng-bind="fnickname"></div>
+	<div class="common_top_r"></div>
+</div>
+<div class="main_newfrienddetail">
+	<div class="headimg">
+		<img src="img/boydefault.png"/>
+	</div>
+	<ul class="detailinfo">
+		<li>
+			<div class="lil">
+			<div style="width:20%;float:left;height:50px;line-height:50px;">{{"frienddetail_index_nickname"|translate}}：</div>
+			<div style="width:80%;float:left;font-size:12px;height:50px;line-height:50px;color:#999;" ng-bind="nickname"></div>
+			</div>
+		</li>
+		<li>
+			<div style="width:20%;float:left;height:50px;line-height:50px;">UUID：</div>
+			<div style="width:80%;float:left;;height:50px;line-height:25px;word-break:break-all;font-size:11px;color:#999;" ng-bind="fuid" id="fuid"></div>
+		</li>
+		<li>
+			<button ng-click="chat()" style="border-radius:3px 3px;margin-top:5px;margin-left:10%;text-align:center;width:80%;height:40px;border:0px;background-color:#0070c9;color:#fff;line-height:40px;font-size:16px;">{{"frienddetail_index_send_btn"|translate}}</button>
+		</li>
+	</ul>
+</div>

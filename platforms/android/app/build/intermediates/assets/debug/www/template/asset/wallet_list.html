@@ -1,0 +1,27 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="jumpasset()">&#xe508;</i>钱包列表</div>
+	<div class="common_top_m"></div>
+	<div class="common_top_r"></div>
+</div>
+<div class="walletinit">
+	<div class="walletleft" onclick="jumpwalletCreate()">
+		<i class="iconfont">&#xe65e;</i>
+		<p>创建钱包</p>
+	</div>
+	<div class="walletright" onclick="jumpwalletImport()">
+		<i class="iconfont">&#xe501;</i>
+		<p>导入钱包</p>
+	</div>
+</div>
+<div class="assetlist">
+	<ul>
+		<li>
+			<div ng-click="jumpasset()">
+				<i class="iconfont padcs" >&#xe6e8;</i>
+				<span>钱包1</span>
+			</div>
+			<div><input type="radio" name="wallet"/><span> 设为默认</span></div>
+		</li>
+	</ul>
+</div>
+<div ng-include = "'template/footer.html'"></div>

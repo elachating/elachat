@@ -1,0 +1,53 @@
+ <style>
+.qrscanner {
+    width: 100%;
+    height: 610px;
+}
+.qrscanner-area {
+    margin-left:20%;
+    width: 60%;
+    height: 85%;
+    background: url(img/scanner.png) no-repeat center center;
+    background-size: contain;
+}
+.through-line {
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: red;
+    position: absolute;
+    animation: myfirst 5s linear infinite alternate;
+}
+
+@keyframes myfirst {
+    0% {
+        background: red;
+        top: 30%;
+    }
+
+    25% {
+        background: yellow;
+        top: 37%;
+    }
+
+    50% {
+        background: blue;
+        top: 42%;
+    }
+
+    75% {
+        background: green;
+        top: 48%;
+    }
+
+    100% {
+        background: red;
+        top: 56%;
+    }
+}
+</style>
+ <div style="width:100%;height:30px;"><div style="width:20%;height:30px;" ng-click="jumpaddfriend()">返回</div></div>
+<div class="qrscanner">
+    <div class="qrscanner-area"></div>
+    <div class="through-line"></div>
+</div>

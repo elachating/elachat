@@ -1,0 +1,41 @@
+<div class="common_top">
+    <div class="common_top_l"  ng-click="jumpfrienddetail()"><i class="iconfont padcs" >&#xe508;</i></div>
+    <div class="common_top_m" ng-bind="fnickname" style="overflow:hidden;"></div>
+    <div class="common_top_r">
+        <input type="file" id="filebtn"  class="filebtn"/></div>
+    <input type="hidden" ng-bind="myuid" />
+    <audio src="" id="curaudio"></audio>
+</div>
+<div class="main_chatdetail">
+    <ul class="content">
+        <li  ng-repeat="chat in chatlist">
+            <img src="img/boydefault.png"  ng-if="chat.whos == 'send'" class="imgright"><span  ng-if="chat.whos == 'send'"  style="word-break : break-all;"   class="spanright">{{chat.content}}</span>
+            <img src="img/boydefault.png"  ng-if="chat.whos == 'received'" class="imgleft"><span  ng-if="chat.whos == 'received'" style="word-break : break-all;"  class="spanleft">{{chat.content}}</span>
+        </li>
+    </ul>
+    <div id="talking">
+        <img src="img/chat-talk.gif">
+    </div>
+    <div class="chat-footer">
+        <div class="submenutop">
+            <div class="user_face_icon">
+                <i class="iconfont" id="showtalktn" curstatus="1" ng-click="showtalkbtn()">&#xe68b;</i>
+            </div>
+            <input class="cinput" id="contents" ng-change="judge()" ng-model="myValue" type="text" placeholder='{{"chat_index_tip"|translate}}'>
+            <button class="cbutton" id="talkbtn" >按住说话</button>
+            <div class="r_icon">
+                <button  id="send" ng-click="sendinfo()">发送</button>
+                <i class="iconfont" id="add" curstatus="0" ng-click="addinfo()" >&#xe646;</i>
+            </div>
+         </div>
+        <div class="submenu" id="submenu">
+            <div class="fsubmenu"><img ng-click="sendcoin()" src="img/zz.png"/></div>
+            <!--
+            <div class="fsubmenu"><img ng-click="sendaudio()" src="img/audio.png"/></div>
+            <div class="fsubmenu"><img ng-click="sendvideo()" src="img/video.png"/></div>
+            <div class="fsubmenu"><img ng-click="sendfile()" src="img/filetran.png"/></div>
+            -->
+        </div>
+        <div id="offline" style="display:none;width:100%;height:60px;line-height:60px;color:#0070c9;background-color:#e5e5e5;text-align:center;font-size:16px;">{{"chat_index_offline"|translate}}</div>
+    </div>
+</div>

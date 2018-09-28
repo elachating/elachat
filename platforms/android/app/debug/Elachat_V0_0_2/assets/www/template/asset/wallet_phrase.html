@@ -1,0 +1,16 @@
+
+<div class="common_top">
+	<div class="common_top_l"> <i class="iconfont padcs" onclick="back()">&#xe508;</i>备份钱包</div>
+	<div class="common_top_m"></div>
+	<div class="common_top_r">
+	
+	</div>
+</div>
+<div class="walletbackup">
+	<div>
+		<p class="p1">请备份您的助记词</p>
+		<p class="p2">下面12个助记词用于对您的钱包进行恢复，请按顺序将其记录在纸上小心保管。我们不存储您的助记词，因此如果您丢失并遗忘了助记词，您将无法找回钱包。</p>
+		<p class="p3" ng-bind="words" style="font-size:14px;line-height:35px;text-align:center;"></p>
+		<input  type="button" ng-click="jumpwalletphrasenext()" style="border-radius:4px;"  value="下一步"/>
+	</div>
+</div>

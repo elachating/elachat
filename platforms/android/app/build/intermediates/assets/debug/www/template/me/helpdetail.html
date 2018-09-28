@@ -1,0 +1,16 @@
+<div class="common_top">
+    <div class="common_top_l"><i class="iconfont padcs" ng-click="noticeback()">&#xe508;</i></div>
+    <div class="common_top_m">{{data.title}}</div>
+    <div class="common_top_r" style="color:#fff;font-size:14px;">
+    </div>
+</div>
+<style>
+body{background-color:#fff;}
+</style>
+<div class="news_detail">
+    <div class="news_title" style="width:90%;height:auto;padding-bottom:5px;">
+        <span style="font-size:20px;">{{data.title}}</span>
+    </div>
+    <div style="width:90%;margin-left:5%;height:auto;font-size:12px;color:#888;height:30px;line-height:30px;">{{data.create_time}}&nbsp;&nbsp;</div>
+    <div class="news_content" ng-bind-html="data.content|to_trusted" style="margin-top:15px;line-height:22px;"></div>
+</div>

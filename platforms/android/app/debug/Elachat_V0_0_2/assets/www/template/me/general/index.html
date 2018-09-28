@@ -1,0 +1,37 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="meindexgeneralback()">&#xe508;</i>{{"me_general_index_title"|translate}}</div>
+	<div class="common_top_m"></div>
+	<div class="common_top_r">
+	
+	</div>
+</div>
+<div class="main_setuplist general">
+	<ul>
+		<li style="list-style-type:none;">
+			<div style="height:60px;line-height:60px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;">
+				<i class="iconfont" style="font-size:22px;">&#xe613;</i>&nbsp;&nbsp;</div>
+				<span style="display:block;float:left;line-height:60px;">{{"me_general_index_langset"|translate}}</span>
+				<select class="languageset" ng-change="langchange();"  ng-model="lang" style="width:120px;height:40px;line-height:40px;margin-top:10px;font-size:15px;">
+					<option ng-repeat="x in sites" value="{{x.op}}">{{x.site}}</option>
+				</select>
+			</div>
+		</li>
+		<!--
+		<li style="list-style-type:none;">
+			<div style="height:60px;line-height:60px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;">
+				<i class="iconfont">&#xe671;</i>&nbsp;&nbsp;</div>
+				<span style="display:block;float:left;line-height:60px;">聊天记录清空</span>
+			</div>
+		</li>
+		<li style="list-style-type:none;">
+			<div style="height:60px;line-height:60px;width:96%;padding-left:4%;color:#333;">
+				<div style="float:left;height:60px;line-height:60px;">
+				<i class="iconfont">&#xe60b;</i>&nbsp;&nbsp;</div>
+				<span style="display:block;float:left;line-height:60px;">保留通讯录</span>
+			</div>
+		</li>
+		-->
+	</ul>
+</div>

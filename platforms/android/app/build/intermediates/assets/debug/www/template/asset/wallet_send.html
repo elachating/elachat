@@ -1,0 +1,50 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs"   ng-click="backwalletmains()">&#xe508;</i></div>
+	<div class="common_top_m">{{"wallet_send_index_title"|translate}}</div>
+	<div class="common_top_r">
+		<i class="iconfont padcs" ng-click="scansendbtn()" style="font-size:26px;">&#xe607;</i>
+	</div>
+</div>
+<div class="wallet_main wallet_send">
+	<div class="_image">
+	<i class="iconfont padcs" >&#xe711;</i>
+	</div>
+	<div class="_input">
+		<ul style="list-style-type:none;">
+			<li style="display:none;border-bottom:1px solid #e5e5e5;">
+				<span>{{"wallet_send_index_tranfrom_adr_tip"|translate}}</span>
+				<input type="text" style="height:35px;" ng-model="fromaddress" id="fromaddress" placeholder='{{"wallet_send_index_tranfrom_adr_tips"|translate}}'/>
+			</li>
+			<li style="border-bottom:1px solid #e5e5e5;">
+				<span>{{"wallet_send_index_receive_adr_tip"|translate}}</span>
+				<input type="text" style="height:35px;" ng-model="toaddress" id="toaddress" placeholder='{{"wallet_send_index_receive_adr_tips"|translate}}'/>
+			</li>
+			<li style="text-align:left;height:30px;display:none;width:100%;color:red;line-height:25px;" id="walletadrerror" >{{"wallet_send_index_receive_adr_error_tips"|translate}}</li>
+			<li style="border-bottom:1px solid #e5e5e5;">
+				<span>{{"wallet_send_index_send_amount_tip"|translate}}</span>
+				<input type="text" style="height:35px;width:45%;" ng-model="amount" id="amount" placeholder='{{"wallet_send_index_send_amount_tips"|translate}}'/>
+				<button style="font-family:'微软雅黑';font-size:10px;border-radius:3px;width:30%;float:right;border:0px;background-color:#e5e5e5;color:#000;height:35px;line-height:17px;margin-top:5px;text-align:center;color:#999;">{{"wallet_send_index_send_balance"|translate}}<br><span style="color:#999;text-align:center;width:100%;" ng-bind="restb">0.00</span></button>
+			</li>
+			<li style="text-align:left;height:30px;display:none;width:100%;color:red;line-height:25px;" id="amounterror" >{{"wallet_send_index_send_amount_error_tips"|translate}}</li>
+			<li style="border-bottom:1px solid #e5e5e5;">
+				<span>{{"wallet_send_index_send_remark_tip"|translate}}</span>
+				<input type="text" style="height:35px;" ng-model="momo" id="momo" placeholder='{{"wallet_send_index_send_remark_tips"|translate}}'/>
+			</li>
+            <!--
+            <li style="border-bottom:1px solid #e5e5e5;">
+                <span>转账费用：</span>
+                <input type="text" style="height:35px;"  ng-model="fee" id="fee" placeholder="请输入手续费"/>
+            </li>
+            <li style="border-bottom:1px solid #e5e5e5;">
+				<span>支付密码：</span>
+				<input type="password"  style="height:35px;" ng-model="paypassword" id="paypassword" placeholder="请支付密码"/>
+			</li>
+			-->
+			<li>
+				<input class="submit" type="button" style="border-radius:4px;" ng-click="sendbtn()" value='{{"wallet_send_index_send_btn_pay"|translate}}'/>
+			</li>
+		</ul>
+		
+	</div>
+</div>
+<div style="display:none;width"></div>

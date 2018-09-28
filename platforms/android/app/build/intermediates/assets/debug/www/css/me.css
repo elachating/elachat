@@ -1,0 +1,181 @@
+body{background-color:#f5f5f5;}
+body.wallet{background-color:#fff;}
+.main_my_top{width:100%;height:auto;background-color:#0070c9;border-top:1px solid #fff;}
+.main_my_top ul{list-style-type:none;width:80%;height:100px;margin:0px;padding:0px;color:#fff; padding-left: 10%; padding-right: 10%;}
+.main_my_top ul .top_li_l{width:30%;height:80px;float:left;text-align:center;padding-top:20px}
+.main_my_top ul .top_li_m{width:40%;height:80px;float:left;text-align:center;padding-top:20px}
+.main_my_top ul .top_li_r{width:30%;height:80px;float:right;text-align:center;padding-top:20px}
+.top_li_l p,.top_li_m p,.top_li_r p{height:20px;line-height:20px;margin-top:2px;}
+
+
+.main_setuplist{list-style-type:none;width:100%;margin:0px;padding:0px;background-color:#fff;height:auto;margin-bottom:60px;}
+.main_setuplist.security,.main_setuplist.general,.main_setuplist.wallet_set{margin-top:45px}
+
+.main_setuplist li{background-color:#fff;width:100%;height:60px;border-bottom:1px solid #e5e5e5;}
+/*
+.main_setuplist li div:first-child{float:left;width:40px;padding-top:16px;padding-left:30px;}
+.main_setuplist li div:first-child img{width:100%;height:100%;border:0px;}
+.main_setuplist li div:last-child{margin-left:65px;height:50px;line-height:50px;padding-top:5px;padding-bottom:5px;font-size:16px;}
+*/
+.main_setuplist li div i{color:#0070c9;font-size:20px;}
+
+.main_setuplist .cate{background-color:#f5f5f5;width:100%;height:40px;border-bottom:1px solid #e5e5e5;}
+.main_setuplist .cate div:first-child{margin-left:0px;float:left;width:auto;height:25px;line-height:25px;font-size:12px;color:#6f6f6f;padding-top:0px;padding-bottom:0px;padding-left:10px;}
+
+.walletinit{width:60%;height:60px;margin-top:45px;padding:2%;padding-left:20%;padding-right:20%}
+.walletinit div{width:40%;height:55px;text-align:center;background:#0070c9;color:#fff;padding-top:5px}
+.walletinit .walletleft{float:left}
+.walletinit .walletright{float:right}
+
+.walletcreate{width:90%;height:auto;margin-top:45px;margin-bottom:60px;padding:5%;background:#fff}
+.walletcreate ._image{width: 100%; height: 70px;line-height:70px;text-align:center; }
+.walletcreate ._image i{color:#0070c9;font-size:40px;}
+.walletcreate ._input{ width: 100%;height: 300px;}
+.walletcreate ._input ul{width: 100%; height: auto;font-size:14px;}
+.walletcreate ._input ul li{width: 100%;    height: 45px;    line-height: 45px;	text-align:center}
+.walletcreate ._input ul li span{    width: 23%;height: 100%;display: block;float: left;text-align:left;padding-left:2%}
+.walletcreate ._input ul li input{    width: 70%;    border: none;    height: 100%;font-family:"Microsoft YaHei"!important}
+.walletcreate ._input ul li .conditions{width:14px;height:14px;margin-right:5px;}
+.walletcreate ._input ul li .submit{margin-top:20px;color:#fff;background:#0070c9}
+.walletcreate ._input ul .advanced{border-bottom:1px #e5e5e5 solid}
+.walletcreate ._input ul .advanced i{float:right;color:#000;
+padding-left: 10px;
+padding-right: 10px;
+transform:rotate(90deg);
+-ms-transform:rotate(90deg); /* Internet Explorer */
+-moz-transform:rotate(90deg); /* Firefox */
+-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+-o-transform:rotate(90deg); /* Opera */}
+.walletcreate ._input ul .advanced.phrasepassword,.walletcreate ._input ul #phrasepassword{display:none}
+
+
+.walletcreate ._input ul li.memorizingwords{height:60px;    line-height: inherit;}
+.walletcreate ._input ul li.memorizingwords textarea{height: 95%; width: 70%;padding-left:1%;font-family:"Microsoft YaHei"!important}
+
+.walletcreate ._input ul li.binfiles input{width:40%;height:40px;float:right;background:#0070c9;color:#fff}
+
+
+
+.walletcreate .create_success{text-align:center}
+.walletcreate .create_success i{color:#0070c9;font-size:40px;}
+.walletcreate .create_success p{width:100%;height:40px;line-height:40px;font-size:18px;color:#4F4F4F;font-family:"Microsoft YaHei"!important}
+.walletcreate .create_success .p2{ margin-top: 30px;}
+.walletcreate .create_success .p3{width:90%; height: 150px;line-height: 20px; text-align: left;  padding: 5%;font-size:14px;}
+.walletcreate .create_success input{width:80%;height:40px;background:#0070c9;color:#fff;border:none;font-size:14px;font-family: "Microsoft YaHei"!important;}
+
+.walletcreate .backup_success{text-align:center}
+.walletcreate .backup_success i{color:#0070c9;font-size:40px;}
+.walletcreate .backup_success p{width:100%;height:40px;line-height:40px;font-size:18px;color:#4F4F4F;font-family:"Microsoft YaHei"!important;margin-bottom:20px;}
+.walletcreate .backup_success input{width:80%;height:40px;background:#0070c9;color:#fff;border:none;font-size:14px;font-family: "Microsoft YaHei"!important;margin-top:20px;}
+
+
+
+.walletimport{width:100%;height:auto;margin-top:45px;margin-bottom:60px;background:#fff;text-align:center}
+.walletimport div{width:100%;height:300px;line-height:300px;}
+.walletimport div i{color:#0070c9;font-size:60px;}
+.walletimport input{width:80%;height:40px;background:#0070c9;color:#fff;margin-top:20px;border:1px #0070c9 solid;font-family:"Microsoft YaHei"!important}
+
+
+
+
+.walletset{width:100%;height:auto;margin-top:45px;margin-bottom:60px;background:#fff;}
+.walletset .removewallet{text-align:center;border:none;font-size:16px}
+.walletset input{width:80%;height:40px;background:#ff0000;color:#fff;margin-top:20px;border:1px #ff0000 solid;font-family:"Microsoft YaHei"!important}
+.main_setuplist.walletset .defaultswitch,.walletcreate .defaultswitch,.main_setuplist.security .defaultswitch{float: right;  width: 60px;height:20px!important; padding: 0;	margin-right: 40px;  margin-top: 15px; background: #ccc; position:relative }
+.main_setuplist.walletset .defaultswitch div,.walletcreate .defaultswitch div,.main_setuplist.security .defaultswitch div{width: 30px;height:20px!important;line-height:20px!important;margin:0px;padding:0px;left:0px;top:0px; background: #000;position:absolute;color:#fff;font-size:14px }
+
+
+
+.main_setuplist.general .languageset{float:right    ;margin-right: 35px;    margin-top: 13px;border:none;font-family:"Microsoft YaHei"!important}
+
+
+
+.walletbackup{width:80%;height:auto;margin-top:100px;margin-bottom:60px;padding:10%;background:#fff;text-align:center; }
+.walletbackup.next{width:80%;height:auto;margin-top:50px;margin-bottom:60px;padding:10%;background:#fff;text-align:center; }
+.walletbackup p{width:100%;height:40px;line-height:40px;font-size:18px;color:#4F4F4F;text-align:center;font-family:"Microsoft YaHei"!important}
+.walletbackup .p2{height:80px;text-align:left; margin-top: 30px;font-size:14px;line-height:20px;}
+.walletbackup.next .p2{height:50px;text-align:left; margin-top: 30px;font-size:14px;line-height:20px;}
+.walletbackup.next .p4{height:auto;margin-top:20px;}
+.walletbackup.next .p4 span{width:auto;height:30px;line-height:30px;display:block;float:left;margin-right:15px;}
+.walletbackup .p3{width:90%; height: 100px;line-height: 30px; text-align: left;margin-top:20px;  padding: 5%;font-size:16px;background:#efefef;color:#0070c9;border:1px #efefef solid;border-radius:3px;}
+.walletbackup input{width:80%;height:40px;background:#0070c9;color:#fff;border:none;font-size:14px;margin-top:40px;font-family: "Microsoft YaHei"!important;}
+
+
+.setpin{width:90%;height:auto;margin-top:45px;margin-bottom:60px;padding:5%;background:#fff}
+.setpin ._input{ width: 100%;height: 300px;margin-top:10px;}
+.setpin ._input ul{width: 100%; height: auto;font-size:14px;}
+.setpin ._input ul li{width: 100%;height: 45px;text-align:center;line-height:45px;border-bottom:none;}
+.setpin ._input ul li span{ width: 23%;height: 100%;display: block;float: left;text-align:left;padding-left:2%}
+.setpin ._input ul li input{  width: 70%;border: none;    height: 100%;font-family:"Microsoft YaHei"!important;color:#fff;}
+.setpin ._input ul li .submit{margin-top:20px;color:#fff;background:#0070c9;border-radius:5px;}
+
+.advanced span{width:100%;}
+
+
+
+/* SET PIN*/
+
+.pin_background{ height: 100%;  width:100%;  position: absolute;    top: 0px;   bottom: 0px background:#0070c9;}
+.pin{width:100%;height:400px;margin-top:40px;}
+.pin .pin_icon{width:150px;height:150px;margin:0 auto;}
+.pin .pin_num {width:100%;height:150px;margin-top:50px}
+.pin .pin_num .pin_tip{width:100%;height:40px;line-height:40px;margin:0 auto ;display:block;text-align:center;font-size:18px;color:#fff;}
+.pin .pin_num .point{width:105px;height:80px;text-align:center;font-size:16px; overflow:hidden; margin:0 auto;margin-top:10px;}
+.pin .pin_num .point ul{width:204px;height:40px; color:#fff ;}
+.pin .pin_num .point ul li{width:12px;height:12px;display:block;float:left;margin-left:3px;border:1px #fff solid;border-radius:12px;}
+.pin .pin_num .point ul .solid{background:#fff}
+.keyboard{width:100%;height:200px;position:absolute;bottom:0;}
+.keyboard ul{width:100%;height:48px;margin-top:2px}
+.keyboard ul li{width:33%;height:48px;line-height:47px;float:left;list-style:none;background:rgba(225,225,225,0.5);font-size:22px;;color:#fff;text-align:center;}
+.keyboard ul li:nth-child(2){margin: 0 0.5%}
+
+/* NEWS LIST*/
+.newslist{list-style-type:none;width:100%;margin:0px;padding:0px;background-color:#fff;height:auto;margin-bottom:60px;margin-top:45px;}
+.newslist li{background-color:#;width:100%;height:60px;border-bottom:1px solid #e5e5e5;}
+.newslist li div:first-child{float:left;width:2%;height:50px;padding-top:10px;padding-left:3%;background:}
+.newslist li div:nth-child(2){float:left;width:65%;height:60px;line-height:60px;font-size:14px;background:}
+.newslist li div:nth-child(3){float:right;width:28%;height:60px;text-align:right;padding-right:2%;line-height:60px;font-size:14px;color:#555;background:#}
+.newslist li div i{font-size:12px;color:#ff0000;}
+
+/*NEWS DETAIL*/
+.news_detail{width:100%;height:auto;margin-top:45px;}
+.news_title{width:90%;height:auto;line-height:40px;padding:5%;}
+.news_title span:first-child{font-size:18px;color:#000}
+.news_content{width:90%;height:auto;padding-left:5%;padding-right:5%;font-size:14px;color:#333;background:#}
+
+
+/*UPDATE*/
+.update{list-style-type:none;width:100%;margin:0px;padding:0px;background-color:#fff;height:auto;margin-bottom:50px;margin-top:45px; }
+.update li{background-color:#;width:100%;height:50px;border-bottom:1px solid #eee;}
+.update li span:first-child{width:100px;height:50px;line-height:50px;display:block;float:left;padding-left:10px;font-size:14px;color:#555}
+.update li span:last-child{width:100px;height:50px;line-height:50px;text-align:right;display:block;float:right;padding-right:10px;font-size:14px;color:#999}
+
+/*NEWS DETAIL*/
+.agreement{width:100%;height:auto;margin-top:45px;}
+.agreement .title{margin:0px;padding:0px;width:90%;height:40px;line-height:40px;padding:5%;font-size:18px;color:#000;}
+.agreement .content{margin:0px;padding:0px;width:90%;height:auto;padding-left:5%;padding-right:5%;font-size:14px;color:#333;}
+
+
+/*SUPPORT*/
+
+.support{width:100%;height:auto;margin-top:45px;}
+.support div{width:100%;height:40px;background:#;text-align:center;font-size:16px;color:#888}
+.support .support_img{width:100%;height:150px;padding-top:50px;background:#}
+
+
+/*FEEDBACK*/
+
+.feedback{width:100%;height:auto;margin-top:45px;background:#fff;padding-bottom:40px;}
+.feedback ul{width:90%;height:auto;padding-top:50px;margin-left:5%}
+.feedback li{width:100%;height:40px;border-bottom:1px #eeeeee solid}
+.feedback li span{float:left;width:15%;height:40px;line-height:40px;text-align:right;display:block;}
+.feedback li input{float:left;width:85%;height:40px;line-height:40px;border:none;background:#fff}
+.feedback ._content{height:100px;}
+.feedback ._content textarea{height:90px;width:84%;border:none;padding-top:10px;padding-left:1%}
+.feedback ._submit{padding-top:50px;}
+.feedback ._submit input {border-radius:4px;width:80%;height:40px;background:#0070c9;color:#fff;margin-left:10%;border:none;font-size:14px;font-family: "Microsoft YaHei"!important;}
+
+
+
+
+

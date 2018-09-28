@@ -94,21 +94,16 @@ public class DownloadHandler extends Handler {
         }
         // 通过Intent安装APK文件
         Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            i.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Uri contentUri = FileProvider.getUriForFile(mContext, "com.eladapps.cloudchat.fileprovider",apkFile);
-            //Uri contentUri = FileProvider.getUriForFile(mContext, BuildConfig.APPLICATION_ID + ".fileProvider", apkFile);
+            i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             i.setDataAndType(contentUri, "application/vnd.android.package-archive");
-            System.out.println("文件路径1："+apkFile.toURI().toString());
-            System.out.println("文件路径1："+ Uri.parse("file://" + apkFile.toString()));
         } else {
-            //intent.setDataAndType(Uri.fromFile(new File(filePath)), "application/vnd.android.package-archive");
-            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.setDataAndType(Uri.parse("file://" + apkFile.toString()), "application/vnd.android.package-archive");
-            //i.setData
-            System.out.println("文件路径2："+apkFile.toString());
         }
-        mContext.startActivity(i);
+        if (mContext.getPackageManager().queryIntentActivities(i, 0).size() > 0) {
+            mContext.startActivity(i);
+        }
     }
 }

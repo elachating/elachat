@@ -1,0 +1,68 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="backwalletmainofdetail()">&#xe508;</i></div>
+	<div class="common_top_m">{{"wallet_translatedetail_title"|translate}}</div>
+	<div class="common_top_r"></div>
+</div>
+<div class="wallet_main">
+	<div class="main_content" style="height:60px;">
+	</div>
+	<div class="main_history" style="height:540px;border-radius:4px 4px 0px 0px;">
+		<div class="_history" style="border-radius:4px 4px 0px 0px;">
+			<div class="history_con">
+				<div style="text-align:center;padding-top:10px;height:90px;border-bottom:1px dotted #e5e5e5;">
+					<div style="width:100%;height:45px;text-align:center;padding:0px;margin:0px;">
+						<i class="iconfont" id="curtxidstatus" style="background-color:#0070c9;color:#fff;font-size:35px;border-radius:3px;"></i>
+					</div>
+					<div style="width:100%;height:20px;text-align:center;padding:0px;margin:0px;line-height:20px;">
+						<span style="font-size:12px;" id="txidstatustxt">{{"wallet_main_history_status_waite_confirm"|translate}}</span>
+					</div>
+					<div style="text-align:center;width:100%;height:20px;padding:0px;margin:0px;line-height:20px;" ng-bind="zzdate"></div>
+				</div>
+				<ul style="list-style-type:none;">
+					<li style="border-bottom:1px solid #f5f5f5;">
+						<div style="width:100%;height:40px;line-height:40px;">
+							<span style="float:left;width:20%;height:40px;line-height:40px;display:block;">{{"wallet_translatedetail_transfrom_amount"|translate}}</span>
+							<span style="float:left;width:80%;height:45px;line-height:40px;display:block;" ng-bind="zzsum" style="font-size:16px;font-weight:900;"></span>
+						</div>
+					</li>
+					<li style="border-bottom:1px solid #f5f5f5;">
+						<div style="width:100%;height:40px;line-height:40px;">
+							<span style="float:left;width:20%;height:40px;line-height:40px;display:block;">{{"wallet_translatedetail_transfrom_fee"|translate}}</span>
+							<span style="float:left;width:80%;height:45px;line-height:40px;display:block;" ng-bind="zzfee"></span>
+						</div>
+					</li>
+					<li style="border-bottom:1px solid #f5f5f5;">
+						<div style="width:100%;height:40px;line-height:40px;">
+							<span style="float:left;width:20%;height:40px;line-height:40px;display:block;" id="foriadr">{{"wallet_translatedetail_transfrom_inputadr"|translate}}</span>
+							<span style="float:left;width:80%;height:45px;line-height:40px;display:block;" ng-bind="inputaddr"></span>
+						</div>
+					</li>
+                    <li style="border-bottom:1px solid #f5f5f5;">
+                        <div style="width:100%;height:40px;line-height:40px;">
+                            <span style="float:left;width:20%;height:40px;line-height:40px;display:block;">{{"wallet_translatedetail_transfrom_confirmnum"|translate}}</span>
+                            <span style="float:left;width:80%;height:45px;line-height:40px;display:block;" ng-bind="confirmnum"></span>
+                        </div>
+                    </li>
+					<li style="border-bottom:1px solid #f5f5f5;">
+						<div style="width:100%;height:40px;line-height:40px;word-wrap:break-word;">
+							<span style="float:left;width:20%;height:40px;line-height:40px;display:block;">{{"wallet_translatedetail_transfrom_no"|translate}}</span>
+							<span style="float:left;width:80%;height:45px;line-height:25px;display:block;" ng-bind="zztranferid"></span>
+						</div>
+					</li>
+					<li style="border-bottom:0px;">
+						<div style="width:100%;height:40px;line-height:40px;">
+							<span style="float:left;width:20%;height:40px;line-height:40px;display:block;">{{"wallet_translatedetail_transfrom_blocknum"|translate}}</span>
+							<span style="float:left;width:80%;height:45px;line-height:40px;display:block;" ng-bind="blockheight"></span>
+						</div>
+					</li>
+				</ul>
+				<div  id="txidqrcode" style="width:100%;height:70px;border-top:1px dotted #e5e5e5;margin-top:10px;">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	#txidqrcode img{margin:0px auto;margin-top:10px;}
+</style>

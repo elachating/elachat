@@ -1,0 +1,61 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="backwalletindex()">&#xe508;</i></div>
+	<div class="common_top_m" ng-bind="walletname_detail"></div>
+	<div class="common_top_r">
+	</div>
+</div>
+<div class="wallet_main" style="height:470px;">
+	<div class="main_content">
+		<div>
+			<p>
+				<span ng-bind="balanceofasset" style="font-size:20px;">0.00</span>
+				<span ng-bind="main_chainid"></span>
+			</p>
+			<p><span id="allsum">0.00 CNY</span></p>
+		</div>
+		<div>
+			<ul style="list-style-type:none;padding:0px;margin:0px;">
+				<li ng-click="jumpwalletsend()" ><i class="iconfont padcs" style="font-size:26px;">&#xe711;</i>{{"wallet_main_send_title"|translate}}</li>
+				<li>|</li>
+				<li ng-click="jumpwalletreceive()"><i class="iconfont padcs" style="font-size:26px;" >&#xe501;</i>{{"wallet_main_receive_title"|translate}}</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main_history" style="height:400px;">
+		<div class="_history">
+			<div class="history_top">
+				<div>{{"wallet_main_history_title"|translate}}</div>
+				<div>
+					<!--
+					<span>所有</span>
+					<span>接收</span>
+					<span>发送</span>
+					-->
+				</div>
+			</div>
+			<div class="history_con" style="overflow-y:auto;height:350px;">
+				<ul style="list-style-type:none;" id="transactions">
+					<li ng-repeat="ntranscation in transactionlist" ng-click="jumptrandetail(ntranscation.txhash,ntranscation.noid)">
+						<p ng-if="ntranscation.inorout == 'in'">
+							<i class="iconfont">&#xe6bb;</i>
+							<span ng-if="ntranscation.confirmstatus == 'Unconfirmed'">{{"wallet_main_history_status_waite_confirm"|translate}}</span>
+							<span ng-if="ntranscation.confirmstatus == 'Pending'">{{"wallet_main_history_status_confirming"|translate}}</span>
+							<span ng-if="ntranscation.confirmstatus == 'Confirmed'">{{"wallet_main_history_status_confirmed_recive"|translate}}</span>
+						</p>
+						<p ng-if="ntranscation.inorout == 'out'">
+							<i class="iconfont">&#xe505;</i>
+							<span ng-if="ntranscation.confirmstatus == 'Unconfirmed'">{{"wallet_main_history_status_waite_confirm"|translate}}</span>
+							<span ng-if="ntranscation.confirmstatus == 'Pending'">{{"wallet_main_history_status_confirming"|translate}}</span>
+							<span ng-if="ntranscation.confirmstatus == 'Confirmed'">{{"wallet_main_history_status_confirming_send"|translate}}</span>
+						</p>
+						<p>
+							<span ng-if="ntranscation.inorout == 'in'">+{{ntranscation.amount}} ELA</span>
+							<span ng-if="ntranscation.inorout == 'out'">-{{ntranscation.amount}} ELA</span>
+							<span>{{ntranscation.adddate | date:'HH:mm:ss yyyy-MM-dd'}}</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

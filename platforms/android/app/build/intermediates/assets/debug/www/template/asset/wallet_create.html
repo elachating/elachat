@@ -1,0 +1,45 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="backwalletinit()">&#xe508;</i></div>
+	<div class="common_top_m">创建钱包</div>
+	<div class="common_top_r">
+	</div>
+</div>
+<div class="walletcreate" style="height:450px;">
+	<div class="_image">
+	<i class="iconfont padcs" style="font-size:60px;">&#xe6a3;</i>
+	</div>
+	<div class="_input">
+		<ul style="list-style-type:none;">
+			<li style="border-bottom:1px solid #f5f5f5;">
+			<span>{{"wallet_ctrate_index_walletname_tip"|translate}}</span>
+			<input type="text" ng-model="walletname" placeholder='&nbsp;&nbsp;{{"wallet_ctrate_index_walletname_tips"|translate}}'/>
+			</li>
+			<li style="border-bottom:1px solid #f5f5f5;">
+			<span>{{"wallet_ctrate_index_paypassword_tip"|translate}}</span>
+			<input type="password" ng-model="paypassword" placeholder='{{"wallet_ctrate_index_walletname_tips"|translate}}'/>
+			</li>
+			<li style="border-bottom:1px solid #f5f5f5;">
+			<span>{{"wallet_ctrate_index_repaypassword_tip"|translate}}</span>
+			<input type="password" ng-model="repaypassword"  placeholder='{{"wallet_ctrate_index_repaypassword_tips"|translate}}'/>
+			</li>
+			<li class="advanced">
+				<span style="width:100%;height:20px;color:red;">{{"wallet_ctrate_index_phraset_title"|translate}}</span>
+			</li>
+			<li class="advanced phrasepassword">
+				<span>{{"wallet_ctrate_index_phraset_tip"|translate}}</span>
+			</li>
+			<li>
+				<span>{{"wallet_ctrate_index_phrasepassword_tip"|translate}}</span>
+				<input type="password" ng-model="parmpassword"  placeholder='&nbsp;&nbsp;{{"wallet_ctrate_index_phrasepassword_tips"|translate}}'/>
+			</li>
+			<li style="border-bottom:1px solid #f5f5f5;">
+				<span>{{"wallet_ctrate_index_rephrasepassword_tip"|translate}}</span>
+				<input type="password" ng-model="reparmpassword"    placeholder='{{"wallet_ctrate_index_rephrasepassword_tips"|translate}}'/>
+			</li>
+			<li>
+				<input class="submit" type="button" style="border-radius:4px;background-color:#0070c9;"   ng-click ="createwalletbtnone()" value='{{"wallet_ctrate_index_createbtn"|translate}}'/>
+			</li>
+		</ul>
+		
+	</div>
+</div>

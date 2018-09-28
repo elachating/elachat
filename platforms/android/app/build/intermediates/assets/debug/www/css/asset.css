@@ -1,0 +1,95 @@
+body{background:#f5f5f5}
+body.wallet{background-color:#fff;}
+.assetlist{width:100%;margin:0px;padding:0px;background-color:#f5f5f5;height:auto;margin-top:25px;margin-bottom:60px;}
+.assetlist ul{list-style-type:none;}
+.assetlist li{box-shadow: 1px 1px 2px #d9d9d9;border-radius:4px;background-color:#fff;width:94%;margin-left:3%;height:70px;border:1px solid #e5e5e5;margin-top:15px;}
+.assetlist li div:first-child{float: left; width: 70%; padding-top:5px;padding-bottom:5px;height: 60px;line-height:60px;font-size:16px;}
+.assetlist li div:first-child i{margin-left:20px;}
+.assetlist li div:last-child{float: right; width: 28%;text-align:right; padding-top:5px;padding-bottom:5px;height: 60px;line-height:60px;font-size:14px;}
+.assetlist li div:last-child input{margin-right:5px}
+.assetlist li div i{color:#0070c9}
+
+.wallet_main{width: 100%; height: auto; margin-top: 45px; margin-bottom: 60px;}
+.wallet_main .main_content{ width: 100%; height: 200px; background: #0070c9;}
+.wallet_main .main_content div:first-child{ width: 100%; height: 80px; ;}
+.wallet_main .main_content div:first-child p:first-child{ width: 100%; height: 50px;line-height:70px; font-size:25px;color:#fff;text-align:center}
+.wallet_main .main_content div:first-child p:first-child span:last-child{font-size:16px;color:#D0DEF1;}
+.wallet_main .main_content div:first-child p:last-child{width:100%;height:30px;text-align:center;color:#D0DEF1}
+
+.wallet_main .main_content div:last-child{ width: 100%; height: 50px; }
+.wallet_main .main_content div:last-child ul{width: 100%; height: 50px;}
+.wallet_main .main_content div:last-child li{width: 49%; height: 50px;text-align: center; float:left;color: #fff; font-size: 20px;  line-height: 50px;}
+.wallet_main .main_content div:last-child li:nth-child(2){width:2%;   font-size: 30px;color: #D0DEF1;}
+
+
+.wallet_main .main_history{	width: 96%; height: 450px; margin-top: -60px; padding: 2%;}
+.wallet_main .main_history ._history{width:100%;height:100%;background: #fff;box-shadow: -1px 1px 4px #aaa;}
+.wallet_main .main_history ._history .history_top{width:100%;height:60px;}
+.wallet_main .main_history ._history .history_top div{height:60px;float:left;}
+.wallet_main .main_history ._history .history_top div:first-child{width:40%;line-height:60px;text-align:center;font-size:18px;color:#3F3F3F}
+.wallet_main .main_history ._history .history_top div:last-child{width:50%;line-height:75px;text-align:center;float:right;}
+.wallet_main .main_history ._history .history_top div:last-child span {margin-left:10px;padding:2px;padding-left:4px;padding-right:4px;background:#0070C9;color:#fff}
+
+.wallet_main .main_history ._history.history_detail p:first-child{width:100%;height:60px;padding-top:20px;text-align:center;} 
+.wallet_main .main_history ._history.history_detail p:first-child i{color:#08BA06;font-size:50px;} 
+.wallet_main .main_history ._history.history_detail p:nth-child(2){width:100%;height:40px;line-height:40px;text-align:center;font-size:18px;color:#666} 
+.wallet_main .main_history ._history.history_detail p:nth-child(3){width:100%;height:40px;text-align:center;font-size:25px;color:#000} 
+
+.wallet_main .main_history ._history.history_detail p:nth-child(4) span{width: auto; height: 20px; display: block;margin-top:10px; text-align: left; padding:0px 20px;color: #777; font-size: 14px;} 
+.wallet_main .main_history ._history.history_detail p:nth-child(4) .address{width: auto; height: auto;word-break:break-all;margin-top:0px; display: block; text-align: left; padding-left: 20px;color: #444; font-size: 14px;} 
+
+.wallet_main .main_history ._history.history_detail p:nth-child(5) span{width: auto; height: 20px; display: block;margin-top:10px; text-align: left; padding:0px 20px;color: #777; font-size: 14px;} 
+.wallet_main .main_history ._history.history_detail p:nth-child(5) span:last-child{color: #444;margin-top:0px;} 
+
+
+.walletinit{width:60%;height:60px;margin-top:105px;padding:2%;padding-left:20%;padding-right:20%}
+.walletinit div{width:40%;height:55px;text-align:center;background:#0070c9;color:#fff;padding-top:5px}
+.walletinit .walletleft{float:left;border-radius:3px;}
+.walletleft i{font-size:24px;}
+.walletinit .walletright{float:right;border-radius:3px;}
+.walletright i{font-size:24px;}
+
+
+
+
+
+.history_con ul{width:90%;height:auto; margin-left:5%;margin-right:5%}
+.history_con ul li{width:100%;height:50px;line-height:50px;border-bottom:1px #ccc solid}
+.history_con ul li p:first-child{width:30%;height:50px;line-height:50px;font-size:16px;float:left;color:#3F3F3F}
+.history_con ul li p:first-child i{color:#1BAD1A;font-size:16px}
+.history_con ul li p:last-child{width:70%;height:50px;float:left;text-align:right}
+.history_con ul li p:last-child span:first-child{width:100%;height:25px;line-height:32px;display:block;color:#3F3F3F}
+.history_con ul li p:last-child span:last-child{width:100%;height:25px;line-height:18px;display:block;color:#bbb}
+
+
+.wallet_main.wallet_send{width:90%;height:auto;margin-top:45px;margin-bottom:60px;padding:5%;background:#fff}
+.wallet_main.wallet_send ._input{ width: 100%;height: 300px;}
+.wallet_main.wallet_send ._image{width: 100%; height: auto;line-height:70px;text-align:center; }
+.wallet_main.wallet_send ._image i{color:#0070c9;font-size:40px;}
+.wallet_main.wallet_send ._image .qrcode{width:80%;}
+#waqrcode img{margin:0px auto;border:1px solid #f5f5f5;}
+
+.wallet_main.wallet_send ._input ul{width: 100%; height: auto;font-size:14px;}
+.wallet_main.wallet_send ._input ul li{width: 100%;    height: 45px;    line-height: 45px;	text-align:center}
+.wallet_main.wallet_send ._input ul li span{width: 23%;height: 100%;display: block;float: left;text-align:left;padding-left:2%}
+.wallet_main.wallet_send ._input ul li input{ width: 75%;    border: none;    height: 100%;font-family:"Microsoft YaHei"!important}
+.wallet_main.wallet_send ._input ul li .conditions{    width:14px;   height: 14px;}
+.wallet_main.wallet_send ._input ul li .submit{margin-top:20px;color:#fff;background:#0070c9}
+
+/* import */
+
+
+.walletimports{width:100%;height:auto;margin-top:44px;}
+.import_top{width:100%;height:50px;background-color:#0070c9;}
+.import_top div{float:left;width:50%;height:48px;line-height:48px;text-align:center;font-size:15px;}
+.import_top div:first-child{border-bottom:2px solid #38cced;color:#fff;}
+.import_top div:last-child{color:#e5e5e5;}
+.import_body{height:500px;width:100%;}
+
+.import_mono_body,.import_privf_body{width:100%;height:450px;}
+.body_t{width:94%;padding-left:3%;width:100%;height:40px;line-height:40px;text-align:left;font-size:14px;}
+.body_mono{width:94%;padding-left:3%;height:auto;}
+.body_mono textarea{width:100%;height:150px;margin-top:2px;margin-bottom:1px;}
+.body_mono input{width:100%;height:40px;margin-top:2px;margin-bottom:1px;}
+.body_b{width:100%;height:40px;margin-top:2px;}
+.body_b button{color:#fff;width:60%;margin-left:20%;height:38px;margin-top:15px; border:0px;border-radius:3px;background-color:#0070c9;text-align:center;font-size:16px;line-height:38px;}

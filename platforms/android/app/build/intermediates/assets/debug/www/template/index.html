@@ -1,0 +1,40 @@
+<div class="common_top">
+	<div class="common_top_l" >&nbsp;&nbsp;{{ 'new_message_title' | translate }}</div>
+	<div class="common_top_m"></div>
+	<div class="common_top_r">
+		<i class="iconfont padcs" ui-sref="friendlist">&#xe71f;</i>
+		<i class="iconfont padcs" ui-sref="addfriend">&#xe64c;</i>
+	</div>
+</div>
+<div class="main_newmessagelist">
+<ul class="main_newmessagelist_person">
+	<li  ng-repeat="item in data"  ng-click="chat(item.friendId,item.nickname)">
+		<div>
+			<img  src="img/boydefault.png" />
+			<span ng-if="item.num > 0" class="reddoted"></span>
+		</div>
+		<div>
+			<p><span style="width:50%;display:block;overflow:hidden;float:left">{{item.friendId}}</span><span style="width:50%;display:block;overflow:hidden;float:right;text-align:right" class="lastmessagetime">{{item.curtime}}</span></p>
+			<p style="height:30px;line-height:30px;"><span ng-if="item.num > 0">[{{item.num}}条]</span>{{item.content}}</p>
+		</div>
+	</li>
+</ul>
+</div>
+<div class="common_footer">
+	<div ui-sref="index">
+		<i class="iconfont" style="color:#0070c9;">&#xe624;</i>
+		<p>{{ 'f_message' | translate }}</p>
+	</div>
+	<div ui-sref="quota">
+		<i class="iconfont">&#xe63c;</i>
+		<p>{{ 'f_quota' | translate }}</p>
+	</div>
+	<div  ui-sref="asset">
+		<i class="iconfont">&#xe65e;</i>
+		<p>{{ 'f_asset' | translate }}</p>
+	</div>
+	<div  ui-sref="me">
+		<i class="iconfont">&#xe63d;</i>
+		<p>{{ 'f_me' | translate }}<i class="iconfont" ng-show="upred" style="font-size:7px;color:red;">&#xe58f;</i></p>
+	</div>
+</div>

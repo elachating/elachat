@@ -1,0 +1,14 @@
+<div class="common_top">
+    <div class="common_top_l"> <i class="iconfont padcs" ng-click="walletindexback()">&#xe508;</i></div>
+    <div class="common_top_m">{{"me_wallet_backupfile_keystore_next_title"|translate}}</div>
+    <div class="common_top_r">
+    </div>
+</div>
+<div class="walletbackup file" style="margin-top:45px;">
+    <div>
+        <p class="p1">{{"me_wallet_backupfile_keystore_next_tip_t"|translate}}</p>
+        <p class="p2" style="height:35px;text-align:center;color:red;font-weigth:900;">{{"me_wallet_backupfile_keystore_next_tip_c"|translate}}</p>
+        <textarea  ng-bind="file" style="width:80%;height:200px;" disabled></textarea>
+        <input  type="button" ng-click="copytxt()" style="border-radius:4px;"  value='{{"me_wallet_backupfile_keystore_next_tip_btn"|translate}}'/>
+    </div>
+</div>

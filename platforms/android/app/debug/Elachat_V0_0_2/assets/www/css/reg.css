@@ -1,0 +1,19 @@
+body{background-color:#f5f5f5;}
+.main_reg{width:100%;height:auto;padding:0px;margin:0px;margin-top:46px;background-color:#fff;}
+.headimg{width:100%;height:130px;text-align:center;}
+.headimg img{width:60px;height:60px;margin-top:40px;border-radius:3px;}
+.reginfo{list-style-type:none;padding:0px;margin:0px;width:100%;height:auto;}
+.reginfo li{width:90%;margin-left:5%;height:50px;}
+.reginfo li input{width:90%;padding-left:5%;height:36px;margin-top:5px;border:1px solid #d9d9d9;}
+.lil{width:60px;line-height:50px;text-align:center;float:left;}
+.lir{margin-left:60px;}
+.finshbtn{width:100%;height:60px;}
+.finshbtn button{border-radius:4px;border:0px;margin-left:10%;color:#fff;font-size:16px;width:80%;height:40px;margin-top:10px;background-color:#0070c9;}
+.wavy-line {
+    width: 100%;
+    height: 10px;
+    background-image: -webkit-radial-gradient(circle, transparent, transparent 9px, orange 9px, orange 10px, transparent 10px, transparent);
+    background-image: -moz-radial-gradient(circle, transparent, transparent 9px, orange 9px, orange 10px, transparent 10px, transparent);
+    background-image: radial-gradient(circle, transparent, transparent 10px, #0070c9 13px, #0070c9 10px, transparent 8px, transparent);
+    background-size: 20px 20px;
+}

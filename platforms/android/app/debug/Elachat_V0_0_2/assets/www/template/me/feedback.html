@@ -1,0 +1,31 @@
+<div class="common_top">
+    <div class="common_top_l"><i class="iconfont padcs" ng-click="meindexback_feed()">&#xe508;</i></div>
+    <div class="common_top_m">{{"me_feedback_title"|translate}}</div>
+    <div class="common_top_r">
+    </div>
+</div>
+<div class="main_my_top">
+</div>
+<div class="feedback">
+    <ul>
+        <li style="list-style:none; ">
+            <span>{{"me_feedback_inform_tip_title"|translate}}：</span>
+            <input type="text" ng-model = "title" placeholder='{{"me_feedback_inform_title"|translate}}'/>
+        </li>
+        <li class="_content"  style="list-style:none; ">
+            <span>{{"me_feedback_inform_tip_content"|translate}}：</span>
+            <textarea ng-model = "content" placeholder='{{"me_feedback_inform_content"|translate}}'></textarea>
+        </li>
+        <li  style="list-style:none; ">
+            <span>{{"me_feedback_inform_tip_email"|translate}}：</span>
+            <input type="text" ng-model = "email" placeholder='{{"me_feedback_inform_email"|translate}}'/>
+        </li>
+        <li  style="list-style:none; ">
+            <span>{{"me_feedback_inform_tip_tel"|translate}}：</span>
+            <input type="text" ng-model = "phone" placeholder='{{"me_feedback_inform_tel"|translate}}'/>
+        </li>
+        <li class="_submit" style="border-bottom:0px;list-style:none;">
+            <input type="button" ng-click = "submit()" value='{{"me_feedback_inform_submit"|translate}}'/>
+        </li>
+    </ul>
+</div>

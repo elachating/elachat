@@ -1,0 +1,42 @@
+<div class="common_top">
+	<div class="common_top_l"><i class="iconfont padcs" ng-click="assetinit()">&#xe508;</i></div>
+	<div class="common_top_m">导入钱包</div>
+	<div class="common_top_r">
+	</div>
+</div>
+<div class="walletimports">
+	<div class="import_top">
+		<div class="importmobtn">导入助记词</div>
+		<div class="importkfbtn">导入私钥</div>
+	</div>
+	<div class="import_mono_body">
+		<div class="body_t">助记词：*</div>
+		<div class="body_mono">
+			<textarea  ng-model="phrasecontents" ></textarea>
+		</div>
+		<div class="body_t">助记词密码：<span style="color:red;font-size:12px;font-weight:900;">(创建钱包时设置的密码,没设置可以不填写)</span></div>
+		<div class="body_mono"><input type="password" ng-model="pharmpassword" /></div>
+		<div class="body_t">支付密码：*</div>
+		<div class="body_mono"><input type="password" ng-model="paypassword" /></div>
+		<div class="body_t">确认支付密码：*</div>
+		<div class="body_mono"><input type="password" ng-model="repaypassword" /></div>
+		<div class="body_b">
+			<button ng-click="importmonobtn()">导入</button>
+		</div>
+	</div>
+	<div class="import_privf_body" style="display:none;">
+		<div class="body_t">私钥内容：*</div>
+		<div class="body_mono">
+			<textarea ng-model="key_c"></textarea>
+		</div>
+		<div class="body_t">私钥密码：*</div>
+		<div class="body_mono"><input type="password" ng-model="backuppassword" /></div>
+		<div class="body_t">支付密码：*</div>
+		<div class="body_mono"><input type="password" ng-model="payspassword" /></div>
+		<div class="body_t">确认支付密码：*</div>
+		<div class="body_mono"><input type="password" ng-model="repayspassword" /></div>
+		<div class="body_b">
+			<button ng-click="imporfiletbtn()">导入</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+.chat-footer{width:100%;height:auto;position:fixed;bottom:0px;background-color:#fff;padding-top:10px;}
+.submenutop{width:100%;height:50px;}
+.submenu{height:80px;width:100%;border-top:1px solid #e5e5e5;display:none;}
+.fsubmenu{float:left;width:25%;height:50px;padding-top:10px;text-align:center;line-height:50px;}
+.fsubmenu img{width:30%;height:auto;border:1px solid #999;border-radius:5px;padding:10px;}
+.user_face_icon,.r_icon,.cinput{float:left;height:30px;}
+.user_face_icon{width:14%;height:30px;text-align:center;}
+.r_icon{width:14%;height:30px;text-align:center;line-height:30px;}
+.cinput{width:68%;height:30px;border:1px solid #aaa;}
+.cbutton{background-color:#f5f5f5;border-radius:3px;float:left;display:none;width:68%;height:30px;border:1px solid #aaa;line-height:30px;text-align:center;}
+.r_icon button{display:none;border:0px;width:100%;height:32px;background-color:#0070c9;color:#fff;line-height:30px;text-align:center;}
+.r_icon i{font-size:35px;color:#aaa;margin-top:0px;display:block;}
+.user_face_icon i{font-size:35px;color:#aaa;margin-top:10px;}
+#talking{display:none;float: left; overflow: hidden; margin-left: 20%; position: fixed;z-index:100;;top:300px;width: 57%;height: auto;text-align: center;background-color:#e5e5e5;padding: 2em 0;border-radius: 0.5em;box-shadow: 1px 1px 10px #cab99f;}
+	.content {
+		font-size: 20px;
+		width: 94%;
+		height: 662px;
+		overflow: auto;
+		padding: 5px;
+		margin-top:60px;
+		margin-bottom:60px;
+	}
+	.content li {
+		margin-top: 10px;
+		padding-left: 10px;
+		width: 94%;
+		display: block;
+		clear: both;
+		overflow: hidden;
+	}
+	.content li img {
+		float: left;
+		width: 60px;
+        height: 60px;
+	}
+	.content li span{
+		background: #7cfc00;
+		padding: 10px;
+		border-radius: 10px;
+		float: left;
+		margin: 6px 10px 0 10px;
+		max-width: 210px;
+		border: 1px solid #ccc;
+		box-shadow: 0 0 3px #ccc;
+	}
+	.content li img.imgleft {
+		float: left;
+	}
+	.content li img.imgright {
+		float: right;
+	}
+	.content li span.spanleft {
+		float: left;
+		background: #fff;
+	}
+	.content li span.spanright {
+		float: right;
+		background: #7cfc00;
+	}
+
+    .bg {
+      background-image:url('img/yuyin.png');
+      background-position: 10px 0px;
+    }
+    .filebtn{width:1px;height：1px;}

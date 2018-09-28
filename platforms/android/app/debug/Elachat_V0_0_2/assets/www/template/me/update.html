@@ -1,0 +1,21 @@
+<div class="common_top">
+    <div class="common_top_l"><i class="iconfont padcs" ng-click="meindexback_update()">&#xe508;</i></div>
+    <div class="common_top_m">{{"me_update_title"|translate}}</div>
+    <div class="common_top_r"></div>
+</div>
+<div class="update">
+    <ul>
+        <li ng-click="jumpnews()" style="list-style:none; ">
+            <span>{{"me_update_curversion"|translate}}</span>
+            <span>0.0.1</span>
+        </li>
+        <li style="list-style:none;display:none;">
+            <span>{{"me_update_versionlog"|translate}}</span>
+            <span>></span>
+        </li>
+        <li style="list-style:none" ng-click="checknew()">
+            <span>{{"me_update_check"|translate}} </span>
+            <span><i class="iconfont" ng-show="upred" style="font-size:7px;color:red;">&#xe58f;</i></span>
+        </li>
+    </ul>
+</div>

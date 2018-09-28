@@ -21,6 +21,9 @@ import org.elastos.carrier.session.StreamState;
 import org.elastos.carrier.session.StreamType;
 
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.util.Log;
 
 import java.io.BufferedOutputStream;
@@ -52,6 +55,7 @@ public class CloudchatApp extends Application{
     Manager sessionMgra;
     Session activsession;
     String sessionRequestSdp;
+    Context mcontext;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -195,7 +199,7 @@ public class CloudchatApp extends Application{
                 valuesa.put("userid", userId);
                 valuesa.put("yn", 0);
                 valuesa.put("hello", hello);
-                System.out.println("新增的字段数据："+valuesa.toString());
+               // System.out.println("新增的字段数据："+valuesa.toString());
                 sqldba.insert("newfirendlist", null, valuesa);
         }
         @Override
@@ -223,8 +227,8 @@ public class CloudchatApp extends Application{
                 var1.add(fromId);
                 var1.add(message);
 
+                startAlarm();
                 chatManager.onMessageReceived(var1);
-
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -343,4 +347,11 @@ public class CloudchatApp extends Application{
             }
         }
     }
+    private void startAlarm() {
+        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        if (notification == null) return;
+        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        r.play();
+    }
+
 }
