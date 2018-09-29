@@ -32,6 +32,7 @@ import java.io.File;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -228,6 +229,7 @@ public class CloudchatApp extends Application{
                 var1.add(message);
 
                 startAlarm();
+
                 chatManager.onMessageReceived(var1);
 
             } catch (Exception e) {
@@ -347,11 +349,30 @@ public class CloudchatApp extends Application{
             }
         }
     }
-    private void startAlarm() {
-        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        if (notification == null) return;
-        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-        r.play();
+    private void startAlarm() throws IOException {
+        File file = new File("data/data/com.eladapps.cloudchat/voice.txt");
+        FileInputStream fis = new FileInputStream(file);
+        int length = fis.available();
+        byte [] buffer = new byte[length];
+        fis.read(buffer);
+        String res = new String(buffer, "UTF-8");
+        fis.close();
+        if(res.equals("1")){
+            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            if (notification == null) return;
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+            r.play();
+        }
     }
-
+    //读取指定文件
+    public String getmvsinfo () throws IOException {
+        File file = new File("data/data/com.eladapps.cloudchat/voice.txt");
+        FileInputStream fis = new FileInputStream(file);
+        int length = fis.available();
+        byte [] buffer = new byte[length];
+        fis.read(buffer);
+        String res = new String(buffer, "UTF-8");
+        fis.close();
+        return res;
+    }
 }

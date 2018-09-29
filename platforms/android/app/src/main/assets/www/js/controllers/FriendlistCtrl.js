@@ -27,16 +27,37 @@ define(['app'],function(app){
             //$location.url("/frienddetail");
             //console.log("fuid:"+fuid+"；nickname:"+nickname);
             if(status=="0"){
-                navigator.webtoast.showtoast("该好友不在线！",1);
+                navigator.webtoast.showtoast($translate.instant("friendlist_index_offline_tip"),1);
             }else{
                 $state.go('frienddetail', {fuid:fuid,nickname:nickname});
             }
-
         }
         window.webcarrierapi.friendlist(function(successful){
-             $scope.data = eval('(' + successful + ')');
-           // console.log("列表："+successful.nickname);
-            //console.log(successful);
+
+        if(window.localStorage.fulistnick == "undefined" || window.localStorage.fulistnick == undefined){
+             var jsonObj = JSON.parse(successful);
+             var json = {};
+             for(var i=0;i<jsonObj.length;i++){
+                var fuid = jsonObj[i]['uid'];
+                json[fuid] = jsonObj[i]['nickname'];
+             }
+             window.localStorage.fulistnick = JSON.stringify(json);
+        }else{
+             var jsonObj = JSON.parse(successful);
+             var jsonObja = JSON.parse(window.localStorage.fulistnick);
+             for(var i=0;i<jsonObj.length;i++){
+                var fuid = jsonObj[i]['uid'];
+                if(jsonObja.hasOwnProperty(fuid)){
+                    if(jsonObj[i]['nickname'].indexOf("...(Offline)")<0){
+                        jsonObja[fuid] = jsonObj[i]['nickname'];
+                    }
+                }else{
+                    jsonObja[fuid] = jsonObj[i]['nickname'];
+                }
+             }
+             window.localStorage.fulistnick = JSON.stringify(jsonObja);
+        }
+        $scope.data = eval('(' + successful + ')');
         },function(error){
             console.log(error);
         })

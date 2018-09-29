@@ -73,7 +73,6 @@ public class CarrierapiPlugin extends CordovaPlugin {
                 uinfo.put("nickname",nickname);
                // System.out.println("当前账户信息："+uinfo.toString());
                 callbackContext.success(uinfo);
-
                 //curcarrier.getFriend(fromuid).setLabel();
                 return true;
             } catch (Exception e) {
@@ -176,7 +175,7 @@ public class CarrierapiPlugin extends CordovaPlugin {
                            subjson.put("alpha",fzm);
                            subjson.put("on",1);
                        }else{
-                           subjson.put("nickname",u.getUserId().substring(0,5)+"...(不在线)");
+                           subjson.put("nickname",u.getUserId().substring(0,5)+"...(Offline)");
                            String fzm = "#";
                            subjson.put("alpha",fzm);
                            subjson.put("on",0);
@@ -203,6 +202,23 @@ public class CarrierapiPlugin extends CordovaPlugin {
                    e.printStackTrace();
                }
                callbackContext.success("1");
+               return true;
+           } catch (Exception e) {
+               e.printStackTrace();
+               callbackContext.error("0");
+               return true;
+           }
+       }else if("getfriendlist".equals(action)){
+           try {
+               List<FriendInfo> finfo = curcarrier.getFriends();
+               JSONArray json = new JSONArray();
+               for(int i=0;i<finfo.size();i++){
+                   JSONObject obj = new JSONObject();
+                   obj.put("userid", finfo.get(i).getUserId());
+                   obj.put("nickname",finfo.get(i).getName());
+                   json.put(obj);
+               }
+               callbackContext.success(json.toString());
                return true;
            } catch (Exception e) {
                e.printStackTrace();
@@ -236,10 +252,10 @@ public class CarrierapiPlugin extends CordovaPlugin {
                JSONObject uinfo = new JSONObject();
                System.out.println("userId11111 = "+userId);
                if(!friendInfo.getName().equals("") && !friendInfo.getName().equals(null)){
-                   System.out.println("nickname11111 = "+nickname);
+                   //System.out.println("nickname11111 = "+nickname);
                    uinfo.put("nickname",nickname);
                }else{
-                   System.out.println("aaaaaaaaa = "+nickname);
+                   //System.out.println("aaaaaaaaa = "+nickname);
                    uinfo.put("nickname",userId);
                }
                callbackContext.success(uinfo);

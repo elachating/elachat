@@ -9,6 +9,7 @@ define(['app'],function(app){
     '$http',
     '$translate',
     function($scope,$rootScope,$location,$state,ngDialog,$http,$translate){
+
         document.addEventListener("deviceready",function(){
             document.addEventListener("backbutton", function(){
                 console.log("当前地址："+ $location.url());
@@ -64,6 +65,11 @@ define(['app'],function(app){
          window.webcarrierapi.myinfo(function(successful){
              window.webdbapi.newmessage(function(success){
                  var obj = eval('(' + success + ')');
+                if(window.localStorage.fulistnick=="undefined" || window.localStorage.fulistnick==undefined){
+                    var jsonObj = "";
+                }else{
+                    var jsonObj = JSON.parse(window.localStorage.fulistnick);
+                }
                  for(var i in obj){
                         var date = new Date(obj[i].curtime);
                         var time1 = date.getTime();
@@ -81,6 +87,12 @@ define(['app'],function(app){
                             obj[i].curtime = h+':'+mm+':'+s
                         }else{
                             obj[i].curtime = y+'-'+m+'-'+d
+                        }
+                        if(jsonObj!=""){
+                            var curfuid = obj[i].friendId;
+                            obj[i].nickname = jsonObj[curfuid];
+                        }else{
+
                         }
                    /* window.webcarrierapi.getfriendinfo(function(success){
                         window.localStorage.nmnickname = success.nickname;

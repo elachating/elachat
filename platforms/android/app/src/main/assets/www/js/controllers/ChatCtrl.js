@@ -12,9 +12,19 @@ define(['app','services/ChatService'],function(app){
     '$cordovaFile',
     '$translate',
     function($scope,$state,$rootScope,$stateParams,$location,ChatService,$interval,ngDialog,$cordovaFile,$translate){
+        if(window.localStorage.fulistnick=="undefined" || window.localStorage.fulistnick==undefined){
+            var jsonObj = "";
+        }else{
+            var jsonObj = JSON.parse(window.localStorage.fulistnick);
+        }
         if($stateParams.nickname==""){
             window.webcarrierapi.getfriendinfo(function(success){
-                  $scope.fnickname = success.nickname;
+                  if(jsonObj!=""){
+                    var fuid = $stateParams.fuid;
+                    $scope.fnickname = jsonObj[fuid];
+                  }else{
+                    $scope.fnickname = success.nickname;
+                  }
                 if(success.nickname==$stateParams.fuid){
                    $(".chat-footer").css("padding","0px");
                   $(".submenutop").hide();
@@ -26,11 +36,12 @@ define(['app','services/ChatService'],function(app){
             $scope.fnickname = $stateParams.nickname;
         }
         $scope.fuid = $stateParams.fuid;
+
         $scope.jumpfrienddetail =  function(){
              $interval.cancel(curinterval);
              if($stateParams.nickname==""){
                 if($scope.fnickname==$stateParams.fuid){
-                    $state.go('frienddetail', {fuid:$stateParams.fuid,nickname:"好友不在线"});
+                    $state.go('frienddetail', {fuid:$stateParams.fuid,nickname:$translate.instant("chat_index_offline")});
                 }else{
                     $state.go('frienddetail', {fuid:$stateParams.fuid,nickname:$scope.fnickname});
                 }
@@ -86,7 +97,7 @@ define(['app','services/ChatService'],function(app){
                 add.style.display="block";
                 var message = contents.value;
                 if(message ==''){
-                    navigator.webtoast.showtoast("不能发送空消息!",1);
+                    navigator.webtoast.showtoast($translate.instant("chat_index_sendmessage_tip"),1);
                 }else {
                     content.innerHTML += '<li><img src="img/boydefault.png"  class="imgright"><span  class="spanright" style="word-break : break-all;" >'+message+'</span></li>';
                     contents.value = '';
@@ -124,6 +135,7 @@ define(['app','services/ChatService'],function(app){
                 add.style.display="block";
             }
         };
+        /*
         $scope.showtalkbtn = function(){
             var curstatus = showtalktn.getAttribute("curstatus");
             if(curstatus=="1"){
@@ -138,6 +150,7 @@ define(['app','services/ChatService'],function(app){
                 showtalktn.setAttribute("curstatus","1");
             }
         };
+        */
         //开始录制
         function recordaudiofuc(){
              //$scope.mediaRec.release();

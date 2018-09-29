@@ -7,6 +7,7 @@
   "new_message_title":"最新消息",
   "friendlist_title":"好友",
   "friendlist_me":"我",
+  "friendlist_index_offline_tip":"该好友不在线!",
   "friendlist_new_friend":"新朋友",
   "me_info":"我",
   "me_info_nickname":"昵称",
@@ -117,6 +118,7 @@
   "me_general_index_title":"通用设置",
   "me_general_index_langset":"语言设置",
   "me_general_index_choice":"请选择",
+  "me_general_index_message_voice_set":"新消息提示音",
   "me_news_title":"消息通知",
   "me_news_read":"全部已读",
   "me_spport_title":"支持我们",
@@ -144,6 +146,8 @@
   "frienddetail_index_send_btn":"发消息",
   "chat_index_tip":"说点什么吧",
   "chat_index_offline":"好友不在线",
+  "chat_index_snedbtn":"发送",
+  "chat_index_sendmessage_tip":"不能发送空消息",
   "wallet_init_index_title":"创建你的第一个亦来云钱包",
   "wallet_init_index_create_wallet":"创建钱包",
   "wallet_init_index_import_wallet":"导入钱包",
@@ -172,6 +176,7 @@
   "wallet_phrase_title":"助记词",
   "wallet_phrase_title_tip":"请备份您的助记词",
   "wallet_phrase_title_tips":"下面12个助记词用于对您的钱包进行恢复，请按顺序将其记录在纸上小心保管。我们不存储您的助记词，因此如果您丢失并遗忘了助记词，您将无法找回钱包。",
+  "wallet_phrase_title_next_btn":"下一步",
 
   "wallet_phrase_next_title":"确认助记词",
   "wallet_phrase_next_title_tip":"请确认您的助记词",
@@ -225,4 +230,5 @@
   "wallet_translatedetail_transfrom_confirmnum":"交易确认：",
   "wallet_translatedetail_transfrom_no":"交易编号：",
   "wallet_translatedetail_transfrom_blocknum":"交易区块："
+
 }

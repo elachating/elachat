@@ -74,6 +74,15 @@ cordova.define("cordova-plugin-carrierapi.CarrierapiPlugin",
                  []//要传递的参数，json格式
                  );
              },
+             getfriendlist:function(success,error){
+                   exec(
+                       success,
+                       error,
+                   "CarrierapiPlugin",//feature name
+                   "getfriendlist",//action
+                   []//要传递的参数，json格式
+                   );
+             },
              sendfile:function(success,error,facate,fdir,exten,fuid){
                    exec(
                        success,
