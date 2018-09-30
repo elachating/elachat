@@ -35,6 +35,7 @@ import android.content.ContentValues;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -60,6 +61,22 @@ public class CloudchatApp extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        //判断文件是否存在
+        /*
+        File filea = new File("data/data/com.eladapps.cloudchat/voice.txt");
+        if (filea.exists()) {}else{
+            try{
+                String msg = "1";
+                filea.createNewFile();
+                OutputStream outputStream = openFileOutput("data/data/com.eladapps.cloudchat/voice.txt",Context.MODE_APPEND);
+                outputStream.write(Integer.parseInt(msg));
+                outputStream.flush();
+                outputStream.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        */
         //判断数据库
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.eladapps.cloudchat/chat.db",null);
         String sqla="create table if not exists messagelist ("
@@ -351,13 +368,23 @@ public class CloudchatApp extends Application{
     }
     private void startAlarm() throws IOException {
         File file = new File("data/data/com.eladapps.cloudchat/voice.txt");
-        FileInputStream fis = new FileInputStream(file);
-        int length = fis.available();
-        byte [] buffer = new byte[length];
-        fis.read(buffer);
-        String res = new String(buffer, "UTF-8");
-        fis.close();
-        if(res.equals("1")){
+        if (file.exists()) {
+
+            FileInputStream fis = new FileInputStream(file);
+            int length = fis.available();
+            byte [] buffer = new byte[length];
+            fis.read(buffer);
+            String res = new String(buffer, "UTF-8");
+            fis.close();
+            if(res.equals("0")){
+
+            }else{
+                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                if (notification == null) return;
+                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                r.play();
+            }
+        }else{
             Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             if (notification == null) return;
             Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);

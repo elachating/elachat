@@ -18,7 +18,6 @@ define(['app'],function(app){
             }, function errorCallback(response) {
                 console.log(response)
             });
-
         $scope.jumpwallet =  function(){
 
           if (window.localStorage.walletyn === undefined || window.localStorage.walletyn === 'undefined') {

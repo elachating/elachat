@@ -10,6 +10,9 @@ define(['app'],function(app){
     '$translate',
     function($scope,$rootScope,$location,$state,ngDialog,$http,$translate){
 
+      if (window.localStorage.nowys === undefined || window.localStorage.nowys === 'undefined') {
+        localStorage.nowys=1;
+      }
         document.addEventListener("deviceready",function(){
             document.addEventListener("backbutton", function(){
                 console.log("当前地址："+ $location.url());
