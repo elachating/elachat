@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/iconfont/iconfont.css" rel="stylesheet">
+    <link href="css/me.css" rel="stylesheet">
+</head>
+<body>
+<div class="pin_background" style=" background:#0070c9;">
+    <div class="pin">
+        <div class="pin_icon">
+            <img src="img/security.png" style ="width:150px; height:150px"/>
+        </div>
+        <div class="pin_num">
+            <span class="pin_tip" ng-bind="pin_tip"></span>
+            <div class="point">
+                <ul id="pointui" style="margin-left:-102px;">
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="keyboard">
+        <ul>
+            <li class="key" ng-click="addnum()">1</li>
+            <li class="key" ng-click="addnum()">2</li>
+            <li class="key" ng-click="addnum()">3</li>
+        </ul>
+        <ul>
+            <li class="key" ng-click="addnum()">4</li>
+            <li class="key" ng-click="addnum()">5</li>
+            <li class="key" ng-click="addnum()">6</li>
+        </ul>
+        <ul>
+            <li class="key" ng-click="addnum()">7</li>
+            <li class="key" ng-click="addnum()">8</li>
+            <li class="key" ng-click="addnum()">9</li>
+        </ul>
+        <ul>
+            <li></li>
+            <li class="key" ng-click="addnum()">0</li>
+            <li id = "delete_key" ng-click="deletenum()">×</li>
+        </ul>
+    </div>
+</div>
+
+<script src='lib/jquery.min.js'></script>
+<script src="cordova.js"></script>
+</body>
+</html>

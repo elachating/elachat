@@ -8,6 +8,7 @@ define(['app'],function(app){
     '$state',
     '$translate',
     function($scope,$rootScope,$stateParams,$location,$state,$translate){
+         navigator.webtoast.judgestorage();
       let lang;
       if (window.localStorage.lang === undefined || window.localStorage.lang === 'undefined') {
           $scope.sites = [

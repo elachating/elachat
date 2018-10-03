@@ -148,6 +148,7 @@
   "chat_index_offline":"好友不在线",
   "chat_index_snedbtn":"发送",
   "chat_index_sendmessage_tip":"不能发送空消息",
+  "chat_index_sendwalletadr_tip":"钱包地址已经发送",
   "wallet_init_index_title":"创建你的第一个亦来云钱包",
   "wallet_init_index_create_wallet":"创建钱包",
   "wallet_init_index_import_wallet":"导入钱包",

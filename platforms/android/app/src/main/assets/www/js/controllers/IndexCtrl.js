@@ -9,7 +9,6 @@ define(['app'],function(app){
     '$http',
     '$translate',
     function($scope,$rootScope,$location,$state,ngDialog,$http,$translate){
-
       if (window.localStorage.nowys === undefined || window.localStorage.nowys === 'undefined') {
         localStorage.nowys=1;
       }

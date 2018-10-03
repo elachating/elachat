@@ -7,6 +7,8 @@ define(['app'],function(app){
     '$location',
     '$translate',
     function($scope,$rootScope,$stateParams,$location,$translate){
+         window.webselfscan.judgecamera(function(successfula){
+           },function(ea){});
         window.webcarrierapi.myinfo(function(successful){
             if(successful.nickname==""){
 			    navigator.webtoast.showtoast($translate.instant("addfriend_before_tip"),1);
@@ -21,12 +23,12 @@ define(['app'],function(app){
         };
         $scope.scanbtn = function(){
             window.webselfscan.scan(function(successful){
-                if(successful!="back"){
-                  $scope.curuadr = successful;
-                  document.getElementById("upid").value = successful;
-                }
-            },function(error){
-			    navigator.webtoast.showtoast($translate.instant("addfriend_scan_error_tip"),1);
+                      if(successful!="back"){
+                          $scope.curuadr = successful;
+                          document.getElementById("upid").value = successful;
+                        }
+                    },function(error){
+                    navigator.webtoast.showtoast($translate.instant("addfriend_scan_error_tip"),1);
             })
         };
         $scope.finish = function (){

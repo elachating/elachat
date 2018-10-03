@@ -103,7 +103,8 @@ define(['app','services/ChatService'],function(app){
                     contents.value = '';
                     content.scrollTop=content.scrollHeight;
                     window.webcarrierapi.sendmessage(function(suf){
-
+                            submenu.style.display="none";
+                            add.setAttribute("curstatus","0");
                     },function(er){
                         console.log("错误"+er);
                     },$stateParams.fuid,message);
@@ -191,8 +192,6 @@ define(['app','services/ChatService'],function(app){
                                // error
                              });
                              recordaudiofuc();
-                             //$scope.src = "/storage/emulated/0/Download/"+ mpfilename +".mp3";
-                             //console.info("指定路径:"+ cordova.file.externalRootDirectory);
                         });
                         talkbtn.addEventListener("touchmove", function(event) {
                             event.preventDefault();//阻止浏览器默认行为
@@ -244,25 +243,17 @@ define(['app','services/ChatService'],function(app){
                     navigator.webtoast.showtoast("录制视频错误!",1);
             })
         }
-        /*
-        $scope.sendcoin = function(){
-            var message = '<button style="width:120px;height:30px;" attr="1929903" class="sendwalletadr">发送</button>';
-            window.webcarrierapi.sendmessage(function(suf){
-
-            },function(er){
-                console.log("错误"+er);
-            },$stateParams.fuid,message);
-        }
-        */
         $scope.sendcoin = function(){
               ChatService.getwalletadr().then(function(success){
-                //var message = "收币地址："+success+' <hr><button style="margin-top:5px;float:right;background-color:#fff;border:1px solid #666;border-radius:3px;width:80px;height:30px;background-img(\'img/zzjy.png\');background-size:30px;" attr="'+success+'" class="sendwalletadr">转账</button>';
                 var message = "<img src='img/chatzz.png'  attr='"+success+"' class='sendwalletadr' style='width:50px;height:50px;float:left;' /><div style='float:left;width:120px;height:50px;margin-left:10px;'>收币地址："+success+' </div>';
                 content.innerHTML += '<li><img src="img/boydefault.png"  class="imgright"><span  class="spanright" style="word-break : break-all;line-height:20px;" >收币地址：'+success+'</span></li>';
                 contents.value = '';
                 content.scrollTop=content.scrollHeight;
                   var fuid = $stateParams.fuid;
                   window.webcarrierapi.sendmessage(function(suf){
+                    navigator.webtoast.showtoast($translate.instant("chat_index_sendwalletadr_tip"),1);
+                    submenu.style.display="none";
+                    add.setAttribute("curstatus","0");
                   },function(errora){
                       // deferred.reject(errora);
                   },fuid,message);
@@ -272,76 +263,10 @@ define(['app','services/ChatService'],function(app){
 
                    },fuid, $scope.myuid,success);
               });
-              /*
-			ngDialog.open({
-			 template: '<div style="width:100%;height:30px;border-bottom:1px solid #e5e5e5;><h4 class="modal-title">提示</h4></div>' +
-					   '<div class="modal-body" style="width:100%;height:100px;color:#444;line-height:100px;text-align:center;font-weight:800;font-size:14px;">&nbsp;确定已经创建了钱包？</div>'+
-					   '<div class="modal-footer" style="width:80%;height:60px;margin-left:10%;padding-top:10px;padding-bottom:20px;">'+
-					   '<button type="button" style="margin:0px;float:left;font-size:14px;border:0px;border-radius:3px;width:30%;margin-left:10%;height:40px;line-height:40px;background-color:#0070c9;color:#fff;text-align:center;" class="btn" ng-click="confirm()" >确定</button>'+
-					   '<button type="button" style="margin:0px;float:left;margin-left:20%;font-size:14px;border:0px;border-radius:3px;width:30%;height:40px;line-height:40px;background-color:#0070c9;color:#fff;text-align:center;" class="btn" ng-click="canclenbtn()" >取消</button>'+
-					   '</div>',
-			plain:true,
-					 className: 'ngdialog-theme-default',
-					 width:'80%',
-					 scope: $scope,
-					 controller: function ($scope) {
-						 $scope.confirm = function () {
-								$scope.closeThisDialog();
-                                  ChatService.getwalletadr().then(function(success){
-                                      var message = success+' <button style="width:80px;height:30px;" attr="'+success+'" class="sendwalletadr">转账交易</button>';
-                                    content.innerHTML += '<li><img src="img/boydefault.png"  class="imgright"><span  class="spanright" style="word-break : break-all;" >'+success+'</span></li>';
-                                    contents.value = '';
-                                    content.scrollTop=content.scrollHeight;
-                                      var fuid = $stateParams.fuid;
-                                      window.webcarrierapi.sendmessage(function(suf){
-                                      },function(errora){
-                                          // deferred.reject(errora);
-                                      },fuid,message);
-                                       window.webdbapi.insertchat(function(sufa){
-
-                                       },function(era){
-
-                                       },fuid, $scope.myuid,success);
-                                  });
-						 };
-						 $scope.canclenbtn = function () {
-
-								$scope.closeThisDialog();
-						 };
-					 }
-			});
-            */
-
           }
         $(document).on("click",".sendwalletadr",function(){
-            //alert($(this).attr("attr"));
-          //$location.url('/asset/wallet_send?toadr='+$(this).attr("attr"));
             var toadr = $(this).attr("attr");
             $state.go('wallet_send', {chainidc:"ELA",toadr:toadr});
-			/*
-			ngDialog.open({
-			 template: '<div style="width:100%;height:30px;border-bottom:1px solid #e5e5e5;><h4 class="modal-title">提示</h4></div>' +
-					   '<div class="modal-body" style="width:100%;height:100px;color:#444;line-height:100px;text-align:center;font-weight:800;font-size:14px;">&nbsp;确定已经创建了钱包？</div>'+
-					   '<div class="modal-footer" style="width:80%;height:60px;margin-left:10%;padding-top:10px;padding-bottom:20px;">'+
-					   '<button type="button" style="margin:0px;float:left;font-size:14px;border:0px;border-radius:3px;width:30%;margin-left:10%;height:40px;line-height:40px;background-color:#0070c9;color:#fff;text-align:center;" class="btn" ng-click="confirm()" >确定</button>'+
-					   '<button type="button" style="margin:0px;float:left;margin-left:20%;font-size:14px;border:0px;border-radius:3px;width:30%;height:40px;line-height:40px;background-color:#0070c9;color:#fff;text-align:center;" class="btn" ng-click="canclenbtn()" >取消</button>'+
-					   '</div>',
-			plain:true,
-					 className: 'ngdialog-theme-default',
-					 width:'80%',
-					 scope: $scope,
-					 controller: function ($scope) {
-						 $scope.confirm = function () {
-								$scope.closeThisDialog();
-                                $state.go('wallet_send', {chainidc:"ELA",toadr:toadr});
-						 };
-						 $scope.canclenbtn = function () {
-								$scope.closeThisDialog();
-						 };
-					 }
-			});
-			*/
-          //$state.go('wallet_send', {chainidc:$stateParams.chainida,toadr:""});
         })
 
 

@@ -10,6 +10,15 @@ cordova.define("cordova-plugin-selfscan.SelfscanPlugin",
                 "scan",//action
                 []
                 );
+            },
+            judgecamera: function(success,error){
+                exec(
+                    success,
+                    error,
+                "SelfscanPlugin",//feature name
+                "judgecamera",//action
+                []
+                );
             }
         }
 });

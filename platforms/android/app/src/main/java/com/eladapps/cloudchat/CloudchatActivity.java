@@ -18,9 +18,13 @@
  */
 
 package com.eladapps.cloudchat;
-
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
 import org.apache.cordova.*;
+import java.util.List;
 
 public class CloudchatActivity extends CordovaActivity
 {
@@ -32,6 +36,28 @@ public class CloudchatActivity extends CordovaActivity
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-        loadUrl(launchUrl);
+        //if(isApplicationInBackground().equals("1")){
+         //   loadUrl("file:///android_asset/www/indexs.html");
+       // }else{
+            loadUrl(launchUrl);
+       // }
     }
+    /*
+    public String isApplicationInBackground() {
+        //this.mcontext = context;
+        Context context= this.getApplicationContext();
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> taskList = am.getRunningTasks(1);
+        System.out.println("提示1:");
+        if (taskList != null && !taskList.isEmpty()) {
+            System.out.println("提示2:");
+            ComponentName topActivity = taskList.get(0).topActivity;
+            System.out.println("提示3:"+topActivity.getPackageName());
+            if (topActivity != null && !topActivity.getPackageName().equals(context.getPackageName())){
+                return "1";
+            }
+        }
+        return "0";
+    }
+    */
 }

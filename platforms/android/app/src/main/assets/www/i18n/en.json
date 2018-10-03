@@ -148,6 +148,7 @@
   "chat_index_offline":"Friend Offline",
   "chat_index_snedbtn":"Send",
   "chat_index_sendmessage_tip":"don't send empty message!",
+  "chat_index_sendwalletadr_tip":"Wallet address is sended yet!",
   "wallet_init_index_title":"Create first Elastos wallet of your",
   "wallet_init_index_create_wallet":"Create wallet",
   "wallet_init_index_import_wallet":"Import wallet",

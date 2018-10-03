@@ -94,6 +94,15 @@ app.config(function(
           deps:app.loadControllerJs('./controllers/IndexCtrl')
     }
   });
+  $stateProvider.state('indexs', {
+    url: "/indexs",
+    templateUrl: "template/indexs.html",
+    cache:true,
+    controller: "IndexsCtrl",
+    resolve: {
+          deps:app.loadControllerJs('./controllers/IndexsCtrl')
+    }
+  });
   $stateProvider.state('addfriend', {
     url: "/addfriend",
     templateUrl: "template/addfriend.html",

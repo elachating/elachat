@@ -10,6 +10,15 @@ cordova.define("cordova-plugin-stoastapi.StoastapiPlugin",
                 "showtoast",//action
                 [text,cate]//要传递的参数，json格式
                 );
+            },
+            judgestorage: function(){
+                exec(
+                    null,
+                    null,
+                "StoastapiPlugin",//feature name
+                "judgestorage",//action
+                []//要传递的参数，json格式
+                );
             }
         };
 });
