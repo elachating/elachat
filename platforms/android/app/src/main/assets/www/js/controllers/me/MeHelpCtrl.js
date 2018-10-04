@@ -11,9 +11,18 @@ define(['app'],function(app){
         $scope.meindexback_help =  function(){
           $location.url('/me/index');
         }
+      if (window.localStorage.lang === undefined || window.localStorage.lang === 'undefined') {
+            var url = "http://121.42.196.42:91/public/index.php/me/news/index?cate=2&language=2";
+        }else{
+            if(window.localStorage.lang=="cn"){
+                var url = "http://121.42.196.42:91/public/index.php/me/news/index?cate=2&language=1";
+            }else{
+                var url = "http://121.42.196.42:91/public/index.php/me/news/index?cate=2&language=2";
+            }
+        }
         $http({
             method: 'GET',
-            url: 'http://121.42.196.42:91/public/index.php/me/news/index?cate=2'
+            url: url
         }).then(function successCallback(response) {
             if(response.data.code == "1"){
                 $scope.data = response.data.msg;
@@ -23,7 +32,6 @@ define(['app'],function(app){
         }, function errorCallback(response) {
                 console.log(response)
         });
-
         $scope.jumpdetail = function(id){
              $location.url('/me/helpdetail?id='+id);
         }

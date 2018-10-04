@@ -11,11 +11,19 @@ define(['app'],function(app){
            $scope.meindexback_agree = function(){
                 $location.url("/me/index");
            }
+          if (window.localStorage.lang === undefined || window.localStorage.lang === 'undefined') {
+                var url = "http://121.42.196.42:91/public/index.php/me/news/detail?id=17";
+            }else{
+                if(window.localStorage.lang=="cn"){
+                    var url = "http://121.42.196.42:91/public/index.php/me/news/detail?id=10";
+                }else{
+                    var url = "http://121.42.196.42:91/public/index.php/me/news/detail?id=17";
+                }
+            }
            $http({
                method: 'GET',
-               url: 'http://121.42.196.42:91/public/index.php/me/news/detail?id=10'
+               url: url
            }).then(function successCallback(response) {
-               console.log("打印："+response.data.msg);
                if(response.data.code == "1"){
                    $scope.data = response.data.msg;
                }else{

@@ -73,6 +73,7 @@ define(['app','services/ChatService'],function(app){
 		*/
         window.webdbapi.messagelist(function(suf){
             $scope.chatlist =eval('(' + suf + ')');
+            content.scrollTop=content.scrollHeight;
         },function(er){
             console.log("错误"+er);
         },$stateParams.fuid);

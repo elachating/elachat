@@ -144,7 +144,7 @@
   "me_update_index_dialog_btn":"确定",
   "frienddetail_index_nickname":"昵称",
   "frienddetail_index_send_btn":"发消息",
-  "chat_index_tip":"说点什么吧",
+  "chat_index_tip":"  说点什么吧...",
   "chat_index_offline":"好友不在线",
   "chat_index_snedbtn":"发送",
   "chat_index_sendmessage_tip":"不能发送空消息",

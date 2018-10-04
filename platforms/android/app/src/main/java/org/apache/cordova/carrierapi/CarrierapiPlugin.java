@@ -252,10 +252,8 @@ public class CarrierapiPlugin extends CordovaPlugin {
                JSONObject uinfo = new JSONObject();
                System.out.println("userId11111 = "+userId);
                if(!friendInfo.getName().equals("") && !friendInfo.getName().equals(null)){
-                   //System.out.println("nickname11111 = "+nickname);
                    uinfo.put("nickname",nickname);
                }else{
-                   //System.out.println("aaaaaaaaa = "+nickname);
                    uinfo.put("nickname",userId);
                }
                callbackContext.success(uinfo);

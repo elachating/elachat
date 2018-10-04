@@ -110,28 +110,28 @@ public class CloudchatApp extends Application{
             carrierInst = Carrier.getInstance();
             //1.2获得Carrier的地址
             carrierAddr = carrierInst.getAddress();
-            Log.i(TAG,"address: " + carrierAddr);
+            //Log.i(TAG,"address: " + carrierAddr);
             //1.3获得Carrier的用户ID
             carrierUserID = carrierInst.getUserId();
-            Log.i(TAG,"userID: " + carrierUserID);
+            //Log.i(TAG,"userID: " + carrierUserID);
             //1.4启动网络
             carrierInst.start(1000);
             handler.synch.await();
-            Log.i(TAG,"carrier client is ready now");
+           // Log.i(TAG,"carrier client is ready now");
             setUp(carrierInst);
         } catch (ElastosException e) {
             e.printStackTrace();
         }
     }
     public String getsender(){
-        System.out.println("获取到的发送者："+sender);
+        //System.out.println("获取到的发送者："+sender);
         return sender;
     }
     public  String getcontents(){
         return contents;
     }
     public void setsender(){
-        System.out.println("初始化发送者");
+        //System.out.println("初始化发送者");
         sender="";
     }
     /* 文件传输相关 */
@@ -191,7 +191,7 @@ public class CloudchatApp extends Application{
         Context context=this;
         File file=context.getFilesDir();
         String path=file.getAbsolutePath();
-        System.out.println("路径："+path);
+        //System.out.println("路径："+path);
         return path;
     }
 
@@ -204,7 +204,7 @@ public class CloudchatApp extends Application{
             synch.wakeup();
         }
         public void onFriendConnection(Carrier carrier, String friendId, ConnectionStatus status) {
-            Log.i(CALLBACK,"friendid:" + friendId + "connection changed to: " + status);
+           // Log.i(CALLBACK,"friendid:" + friendId + "connection changed to: " + status);
             from = friendId;
             friendStatus = status;
             if (friendStatus == ConnectionStatus.Connected)
@@ -223,7 +223,7 @@ public class CloudchatApp extends Application{
         @Override
         //3.2 接受好友信息
         public void onFriendMessage(Carrier carrier,String fromId, String message) {
-            Log.i(CALLBACK,"address:" + fromId + "connection changed to: " + message);
+            //Log.i(CALLBACK,"address:" + fromId + "connection changed to: " + message);
             try {
                 String reveiverid = carrier.getUserId().toString();
                 SQLiteDatabase sqldb = SQLiteDatabase.openOrCreateDatabase("/data/data/com.eladapps.cloudchat/chat.db",null);
@@ -260,15 +260,15 @@ public class CloudchatApp extends Application{
 
     //准备接受数据，建立session
     public void setUp(Carrier curcarrier) {
-        System.out.println("准备建立Session!");
+        //System.out.println("准备建立Session!");
         try {
             sessionMgra = Manager.getInstance(curcarrier, new ManagerHandler(){
                 @Override
                 public void onSessionRequest(Carrier carrier, String s, String s1) {
-                    System.out.println("来自"+s);
-                    System.out.println("状态"+s1);
+                    //System.out.println("来自"+s);
+                    //System.out.println("状态"+s1);
                     sessionRequestSdp = s1;
-                    System.out.println("开始在此处创建newsession，并且添加steam"+s1);
+                    //System.out.println("开始在此处创建newsession，并且添加steam"+s1);
                     createsessionjoinstream(s);
                 }
             });

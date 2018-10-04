@@ -10,7 +10,7 @@
   "friendlist_index_offline_tip":"This is friend offline!",
   "friendlist_new_friend":"New Friend",
   "me_info":"My Profile",
-  "me_info_nickname":"NICKNAME",
+  "me_info_nickname":"NickName",
   "me_info_set_tip":"Setting Sucessfully",
   "newfriendlist_title":"New friends",
   "newfriendlist_remark":"Remark",
@@ -144,7 +144,7 @@
   "me_update_index_dialog_btn":"Confirm",
   "frienddetail_index_nickname":"NickName",
   "frienddetail_index_send_btn":"Send Message",
-  "chat_index_tip":" Say something",
+  "chat_index_tip":" Say something...",
   "chat_index_offline":"Friend Offline",
   "chat_index_snedbtn":"Send",
   "chat_index_sendmessage_tip":"don't send empty message!",
@@ -221,15 +221,15 @@
   "wallet_send_index_send_balance":"balance：",
 
   "wallet_translatedetail_title":"Transform Detail",
-  "wallet_translatedetail_transfrom_amount":"Transform Amount：",
-  "wallet_translatedetail_transfrom_fee":"Transform Fee：",
-  "wallet_translatedetail_transfrom_inputadr":"Input Address：",
-  "wallet_translatedetail_transfrom_outputadr":"Output Address：",
+  "wallet_translatedetail_transfrom_amount":"Amount：",
+  "wallet_translatedetail_transfrom_fee":"Fee：",
+  "wallet_translatedetail_transfrom_inputadr":"Input：",
+  "wallet_translatedetail_transfrom_outputadr":"Output：",
   "wallet_translatedetail_transfrom_confirming":"Confirming",
   "wallet_translatedetail_transfrom_receive_success":"Receive Successfully",
   "wallet_translatedetail_transfrom_transform_success":"Tranform Successfully",
-  "wallet_translatedetail_transfrom_confirmnum":"Confirm Number：",
-  "wallet_translatedetail_transfrom_no":"Transform Number：",
-  "wallet_translatedetail_transfrom_blocknum":"Block Height："
+  "wallet_translatedetail_transfrom_confirmnum":"Confirm：",
+  "wallet_translatedetail_transfrom_no":" Trade ID：",
+  "wallet_translatedetail_transfrom_blocknum":" Height："
 
 }
