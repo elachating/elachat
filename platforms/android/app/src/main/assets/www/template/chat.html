@@ -6,13 +6,13 @@
     <input type="hidden" ng-bind="myuid" />
     <audio src="" id="curaudio"></audio>
 </div>
-<div class="main_chatdetail">
-    <ul class="content">
-        <li  ng-repeat="chat in chatlist">
-            <img src="img/boydefault.png"  ng-if="chat.whos == 'send'" class="imgright"><span  ng-if="chat.whos == 'send'"  style="word-break : break-all;"   class="spanright">{{chat.content}}</span>
-            <img src="img/boydefault.png"  ng-if="chat.whos == 'received'" class="imgleft"><span  ng-if="chat.whos == 'received'" style="word-break : break-all;"  class="spanleft">{{chat.content}}</span>
-        </li>
-    </ul>
+<div class="main_chatdetail" id="minirefresh">
+        <ul class="content" id="dataid" >
+            <li  ng-repeat="chat in chatlist">
+                <img src="img/boydefault.png"  ng-if="chat.whos == 'send'" class="imgright"><span  ng-if="chat.whos == 'send'"  style="word-break : break-all;"   class="spanright">{{chat.content}}</span>
+                <img src="img/boydefault.png"  ng-if="chat.whos == 'received'" class="imgleft"><span  ng-if="chat.whos == 'received'" style="word-break : break-all;"  class="spanleft">{{chat.content}}</span>
+            </li>
+        </ul>
     <div id="talking">
         <img src="img/chat-talk.gif">
     </div>

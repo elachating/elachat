@@ -21,6 +21,7 @@ import org.elastos.carrier.session.StreamState;
 import org.elastos.carrier.session.StreamType;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -97,9 +98,20 @@ public class CloudchatApp extends Application{
                 + "yn integer,"
                 + "hello text,"
                 + "nickname text)";
+
+        String sqld ="create table if not exists newmessagelist ("
+                + "id integer primary key autoincrement,"
+                + "sender text, "
+                + "content text, "
+                + "yn integer,"
+                + "curtime datetime,"
+                + "reciver text)";
+
         db.execSQL(sqla);
         db.execSQL(sqlb);
         db.execSQL(sqlc);
+        db.execSQL(sqld);
+
         db.close();
         TestOptions options = new TestOptions(getAppPath());
         TestHandler handler = new TestHandler();
@@ -237,6 +249,7 @@ public class CloudchatApp extends Application{
                 values.put("curtime",curtime.format(date));
                 values.put("reciver",reveiverid);
                 sqldb.insert("messagelist", null, values);
+                sqldb.insert("newmessagelist", null, values);
                 sender = fromId;
                 contents = message;
 

@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.ContentValues;
+import android.database.SQLException;
 import android.os.Environment;
 import org.json.JSONObject;
 
@@ -125,7 +126,7 @@ public class DbapiPlugin extends CordovaPlugin {
             try {
                 updatechatstatus(sqldb);
                 String uid = args.getString(0);
-                Cursor result = sqldb.query ("messagelist",new String[]{"sender,content"},"sender=? or reciver=? ",new String[]{uid,uid},null,null,null);
+                Cursor result = sqldb.query ("messagelist",new String[]{"sender,content"},"sender=? or reciver=? ",new String[]{uid,uid},null,null,"id desc","0,10");
                 JSONArray json = new JSONArray();
 
                 if(result.moveToFirst()){
@@ -140,8 +141,6 @@ public class DbapiPlugin extends CordovaPlugin {
                         Matcher m_style=p_style.matcher(content);
                         content=m_style.replaceAll(""); //过滤style标签
                         content=content.replace("</div>","");
-
-
                        // Integer yn = result.getInt(result.getColumnIndex("yn"));
                         JSONObject obj = new JSONObject();
                         if (sender.equals(uid)) {
@@ -255,6 +254,17 @@ public class DbapiPlugin extends CordovaPlugin {
                 callbackContext.error("0");
                 return true;
             }
+        }else if("nnchatlist".equals(action)){
+            try {
+                String uid = args.getString(0);
+                String json = getnewmessagelist(sqldb,uid);
+                callbackContext.success(json.toString());
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                callbackContext.error("0");
+                return true;
+            }
         }
         return super.execute(action, args, callbackContext);
     }
@@ -268,5 +278,44 @@ public class DbapiPlugin extends CordovaPlugin {
         values.put("yn", 1);
         //sqldb.update("messagelist", null, values);
         sqldb.update("messagelist", values, null,null);
+    }
+    //删除新消息列表信息
+    public void delnewmessage(SQLiteDatabase sqldb,String uid){
+        try {
+            sqldb.delete("newmessagelist", "sender=? or reciver=? ", new String[]{uid, uid});
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    //获取新消息表信息
+    public String getnewmessagelist(SQLiteDatabase sqldb,String uid) throws Exception{
+            Cursor result = sqldb.query("newmessagelist", new String[]{"sender,content,yn"}, "sender=? or reciver=? ", new String[]{uid, uid}, null, null, null);
+            JSONArray json = new JSONArray();
+            if (result.moveToFirst()) {
+                while (!result.isAfterLast()) {
+                    String sender = result.getString(result.getColumnIndex("sender"));
+                    String content = result.getString(result.getColumnIndex("content"));
+                    Integer yn = result.getInt(result.getColumnIndex("yn"));
+                    JSONObject obj = new JSONObject();
+                    //if (yn == 0) {
+                        if (sender.equals(uid)) {
+                            System.out.println("SEND：" + uid);
+                            obj.put("whos", "received");
+                        } else {
+                            //System.out.println("RECEIVED");
+                            obj.put("whos", "send");
+                        }
+                        obj.put("sender", sender);
+                        obj.put("content", content);
+                        //obj.put("cate", cate);
+                        json.put(obj);
+                    //}
+                    result.moveToNext();
+                }
+            }
+            delnewmessage(sqldb,uid);
+            result.close();
+            sqldb.close();
+            return json.toString();
     }
 }

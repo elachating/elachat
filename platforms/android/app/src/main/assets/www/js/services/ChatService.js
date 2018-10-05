@@ -8,7 +8,7 @@ define(['app'],function(app){
       return {
         chatmessage: function(fuid){
              var deferred = $q.defer();
-            window.webdbapi.newmessagelist(function(suf){
+            window.webdbapi.nnchatlist(function(suf){
                  var dataobj=eval('(' + suf + ')');
                  deferred.resolve(dataobj);
              },function(er){

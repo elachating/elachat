@@ -64,6 +64,15 @@ cordova.define("cordova-plugin-chatdb.DbapiPlugin",
             "newmessage",//action
             [myuid]//要传递的参数，json格式
             );
+           },
+           nnchatlist:function(success,error,uid){
+            exec(
+                success,
+                error,
+            "DbapiPlugin",//feature name
+            "nnchatlist",//action
+            [uid]//要传递的参数，json格式
+            );
            }
         }
 });

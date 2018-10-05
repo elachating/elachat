@@ -12,6 +12,63 @@ define(['app','services/ChatService'],function(app){
     '$cordovaFile',
     '$translate',
     function($scope,$state,$rootScope,$stateParams,$location,ChatService,$interval,ngDialog,$cordovaFile,$translate){
+        /*
+        var divOne = document.getElementById('dataid');
+        var isMove = false;
+        var loaded = true;
+        var oldY = 0;
+        var curY = 0;
+        divOne.addEventListener('touchstart', function (e) {
+            if (e.targetTouches.length == 1) {
+                var touch = e.targetTouches[0];
+                isMove = true;
+                oldY = touch.pageY;
+            }
+        }, false);
+        divOne.addEventListener('touchmove', function (e) {
+            //禁用默认操作
+            e.preventDefault();
+            if (e.targetTouches.length == 1) {
+                var touch = e.targetTouches[0];
+                if (isMove) {
+                    curY = touch.pageY;
+					if(curY-oldY>20){
+					    if(loaded){
+							//document.getElementById("loadtop").style.display = "block";
+							document.getElementById("loadtop").style.height = "100px";
+							document.getElementById("loadtop").style.lineHeight = "150px";
+						    //document.getElementById("dataid").style.marginTop = (curY - oldY-50) + 'px';
+						}
+					    loaded = false;
+					}
+                }
+            }
+        });
+        divOne.addEventListener('touchend', function (e) {
+            if (e.changedTouches.length == 1) {
+                 var touch = e.changedTouches[0];
+                 isMove = false;
+                 loaded = true;
+                 //document.getElementById("dataid").style.marginTop = '0px';
+                 document.getElementById("loadtop").innerHTML = "加载中...";
+                 document.getElementById("loadtop").style.height = "45px";
+                 document.getElementById("loadtop").style.lineHeight = "45px";
+            }
+        }, false);
+        */
+        window.onscroll = function () {
+                var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+                if (document.body) {
+                    bodyScrollTop = document.body.scrollTop;
+                }
+                if (document.documentElement) {
+                    documentScrollTop = document.documentElement.scrollTop;
+                }
+                scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+                if(scrollTop == "0"){
+                    console.log("滑动到顶部了");
+                }
+        }
         if(window.localStorage.fulistnick=="undefined" || window.localStorage.fulistnick==undefined){
             var jsonObj = "";
         }else{
@@ -72,6 +129,7 @@ define(['app','services/ChatService'],function(app){
 		});
 		*/
         window.webdbapi.messagelist(function(suf){
+            console.log("数据："+eval('(' + suf + ')').length);
             $scope.chatlist =eval('(' + suf + ')');
             content.scrollTop=content.scrollHeight;
         },function(er){
