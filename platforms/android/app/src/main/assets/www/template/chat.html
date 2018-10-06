@@ -9,6 +9,7 @@
 <div class="main_chatdetail" id="minirefresh">
         <ul class="content" id="dataid" >
             <li  ng-repeat="chat in chatlist">
+                <div style="display:none;font-size:12px;text-align:center;width:100%;height:30px;line-height:30px;">{{chat.ctime}}</div>
                 <img src="img/boydefault.png"  ng-if="chat.whos == 'send'" class="imgright"><span  ng-if="chat.whos == 'send'"  style="word-break : break-all;"   class="spanright">{{chat.content}}</span>
                 <img src="img/boydefault.png"  ng-if="chat.whos == 'received'" class="imgleft"><span  ng-if="chat.whos == 'received'" style="word-break : break-all;"  class="spanleft">{{chat.content}}</span>
             </li>

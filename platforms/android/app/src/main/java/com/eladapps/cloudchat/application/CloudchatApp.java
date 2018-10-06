@@ -246,8 +246,9 @@ public class CloudchatApp extends Application{
                 values.put("sender", fromId);
                 values.put("content", message);
                 values.put("yn", 0);
-                values.put("curtime",curtime.format(date));
+                values.put("curtime",curtime.format(date).toString());
                 values.put("reciver",reveiverid);
+                System.out.println("当前时间为："+values.toString());
                 sqldb.insert("messagelist", null, values);
                 sqldb.insert("newmessagelist", null, values);
                 sender = fromId;

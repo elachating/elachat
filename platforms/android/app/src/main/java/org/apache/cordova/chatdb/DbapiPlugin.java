@@ -126,14 +126,14 @@ public class DbapiPlugin extends CordovaPlugin {
             try {
                 updatechatstatus(sqldb);
                 String uid = args.getString(0);
-                Cursor result = sqldb.query ("messagelist",new String[]{"sender,content"},"sender=? or reciver=? ",new String[]{uid,uid},null,null,"id desc","0,10");
+                Cursor result = sqldb.query ("messagelist",new String[]{"sender,content,curtime"},"sender=? or reciver=? ",new String[]{uid,uid},null,null,"id DESC,curtime ASC","0,10");
                 JSONArray json = new JSONArray();
-
+                JSONArray jsona = new JSONArray();
                 if(result.moveToFirst()){
                     while(!result.isAfterLast()) {
                         String sender = result.getString(result.getColumnIndex("sender"));
                         String content = result.getString(result.getColumnIndex("content"));
-
+                        String ctime = result.getString(result.getColumnIndex("curtime"));
                         //String regEx_style="<hr><button[^>]*?>[\\s\\S]*?<\\/button>"; //定义style的正则表达式
                         String regEx_style="<img[^>]*?\\/><div style='float:left;width:120px;height:50px;margin-left:10px;'>"; //定义style的正则表达式
 
@@ -152,14 +152,19 @@ public class DbapiPlugin extends CordovaPlugin {
                         }
                         obj.put("sender", sender);
                         obj.put("content", content.trim());
+                        String[] ctimea = ctime.split(" ");
+                        obj.put("ctime", ctimea[0]);
                         //obj.put("cate", cate);
                         json.put(obj);
                         result.moveToNext();
                     }
+                    for(int jsonlen=json.length()-1;jsonlen>=0;jsonlen--){
+                        jsona.put(json.get(jsonlen));
+                    }
                 }
                 result.close();
                 sqldb.close();
-                callbackContext.success(json.toString());
+                callbackContext.success(jsona.toString());
                 return true;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -265,6 +270,18 @@ public class DbapiPlugin extends CordovaPlugin {
                 callbackContext.error("0");
                 return true;
             }
+        }else if("getmessageoflimit".equals(action)){
+            try {
+                String uid = args.getString(0);
+                String limitstr = args.getString(1);
+                String json = getmessageslist(sqldb,uid,limitstr);
+                callbackContext.success(json.toString());
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                callbackContext.error("0");
+                return true;
+            }
         }
         return super.execute(action, args, callbackContext);
     }
@@ -317,5 +334,46 @@ public class DbapiPlugin extends CordovaPlugin {
             result.close();
             sqldb.close();
             return json.toString();
+    }
+    //获取指定条件下的有限条数据
+    public String getmessageslist(SQLiteDatabase sqldb,String uid,String limitstr) throws Exception{
+            //updatechatstatus(sqldb);
+            Cursor result = sqldb.query ("messagelist",new String[]{"sender,content,curtime"},"sender=? or reciver=? ",new String[]{uid,uid},null,null,"id desc",limitstr);
+            JSONArray json = new JSONArray();
+            JSONArray jsona = new JSONArray();
+            if(result.moveToFirst()){
+                while(!result.isAfterLast()) {
+                    String sender = result.getString(result.getColumnIndex("sender"));
+                    String ctime = result.getString(result.getColumnIndex("curtime"));
+                    String content = result.getString(result.getColumnIndex("content"));
+                    String regEx_style="<img[^>]*?\\/><div style='float:left;width:120px;height:50px;margin-left:10px;'>";
+                    Pattern p_style=Pattern.compile(regEx_style,Pattern.CASE_INSENSITIVE);
+                    Matcher m_style=p_style.matcher(content);
+                    content=m_style.replaceAll(""); //过滤style标签
+                    content=content.replace("</div>","");
+                    JSONObject obj = new JSONObject();
+                    if (sender.equals(uid)) {
+                        System.out.println("SEND：" + uid);
+                        obj.put("whos", "received");
+                    } else {
+                        obj.put("whos", "send");
+                    }
+                    obj.put("sender", sender);
+                    obj.put("content", content.trim());
+                    String[] ctimea = ctime.split(" ");
+                    obj.put("ctime", ctimea[0]);
+
+                    json.put(obj);
+                    result.moveToNext();
+                }
+                for(int jsonlen=json.length()-1;jsonlen>=0;jsonlen--){
+
+                   jsona.put(json.get(jsonlen));
+                }
+
+            }
+            result.close();
+            sqldb.close();
+            return jsona.toString();
     }
 }

@@ -67,6 +67,36 @@ define(['app','services/ChatService'],function(app){
                 scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
                 if(scrollTop == "0"){
                     console.log("滑动到顶部了");
+                    if(window.localStorage.curdatalen >= 10 && window.localStorage.curdatayn ==1){
+                        var limitstr = window.localStorage.curdatalen + ",10";
+                        console.log("限制条数："+limitstr);
+                        //$("#dataid").prepend('<div id="toptip" style="display:none;font-size:12px;text-align:center;width:100%;height:30px;line-height:30px;">加载更多...</div>');
+                        window.webdbapi.getmessageoflimit(function(successf){
+                            $("#toptip").remove();
+                            if(eval('(' + successf + ')').length == 10){
+                              window.localStorage.curdatalen = eval('(' + successf + ')').length + parseInt(window.localStorage.curdatalen);
+                              //$scope.chatlist.push($scope.chat);
+                              //$scope.chatlist =eval('(' + successf + ')');
+                              //$scope.chatlist = $scope.chatlist + eval('(' + successf + ')');
+                              //console.log("JSON字符串："+ successf);
+                             /* var json1 = JSON.stringify($scope.chatlist);
+                              var json3 = json1.concat(successf);
+                              console.log("JSON3:"+json3);
+                              */
+                              //var chatlisti = $.extend([{}], eval('(' + successf + ')'), $scope.chatlist);
+                              var chatlisti = $.merge(eval('(' + successf + ')'), $scope.chatlist);
+                              //console.log("JSON3:"+JSON.stringify(chatlisti));
+                             // setTimeout(function(){$scope.chatlist = chatlisti},5000);
+                                $scope.chatlist = chatlisti;
+                            }else{
+                              window.localStorage.curdatayn = 0;
+                              navigator.webtoast.showtoast("No more data!",1);
+                            }
+                        },function(erf){
+                            console.log("获取数据失败！："+erf);
+                        },$stateParams.fuid,limitstr);
+
+                    }
                 }
         }
         if(window.localStorage.fulistnick=="undefined" || window.localStorage.fulistnick==undefined){
@@ -129,7 +159,9 @@ define(['app','services/ChatService'],function(app){
 		});
 		*/
         window.webdbapi.messagelist(function(suf){
-            console.log("数据："+eval('(' + suf + ')').length);
+            //console.log("数据："+eval('(' + suf + ')').length);
+            window.localStorage.curdatalen = eval('(' + suf + ')').length;
+            window.localStorage.curdatayn = 1;
             $scope.chatlist =eval('(' + suf + ')');
             content.scrollTop=content.scrollHeight;
         },function(er){
@@ -144,7 +176,7 @@ define(['app','services/ChatService'],function(app){
                  }
                  content.scrollTop=content.scrollHeight;
               });
-        },3000);
+        },5000);
         window.webcarrierapi.myinfo(function(successful){
           $scope.myuid = successful.uid;
                  content.scrollTop=content.scrollHeight;

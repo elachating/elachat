@@ -73,6 +73,15 @@ cordova.define("cordova-plugin-chatdb.DbapiPlugin",
             "nnchatlist",//action
             [uid]//要传递的参数，json格式
             );
+           },
+           getmessageoflimit:function(success,error,uid,limitstr){
+            exec(
+                success,
+                error,
+            "DbapiPlugin",//feature name
+            "getmessageoflimit",//action
+            [uid,limitstr]//要传递的参数，json格式
+            );
            }
         }
 });
