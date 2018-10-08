@@ -23,6 +23,8 @@ import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
+
 import org.apache.cordova.*;
 import java.util.List;
 
@@ -36,11 +38,34 @@ public class CloudchatActivity extends CordovaActivity
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-        //if(isApplicationInBackground().equals("1")){
-         //   loadUrl("file:///android_asset/www/indexs.html");
-       // }else{
+        if(isApplicationInBackground()){
+            loadUrl("file:///android_asset/www/indexs.html");
+        }else{
             loadUrl(launchUrl);
-       // }
+        }
+    }
+    public Boolean isApplicationInBackground() {
+    		ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+    		String curPackageName = getApplicationContext().getPackageName();
+    		List<ActivityManager.RunningAppProcessInfo> app = am.getRunningAppProcesses();
+    		if(app==null){
+                return false;
+    		}
+    		for(ActivityManager.RunningAppProcessInfo a:app){
+    		   if(a.processName.equals(curPackageName)&& a.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND){
+                  return true;
+                }
+    		}
+    		return false;
+        }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_HOME:
+            System.out.println("当前时间戳："+System.currentTimeMillis());
+            break;
+        }
+         return super.onKeyDown(keyCode, event);
     }
     /*
     public String isApplicationInBackground() {

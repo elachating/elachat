@@ -75,19 +75,8 @@ define(['app','services/ChatService'],function(app){
                             $("#toptip").remove();
                             if(eval('(' + successf + ')').length == 10){
                               window.localStorage.curdatalen = eval('(' + successf + ')').length + parseInt(window.localStorage.curdatalen);
-                              //$scope.chatlist.push($scope.chat);
-                              //$scope.chatlist =eval('(' + successf + ')');
-                              //$scope.chatlist = $scope.chatlist + eval('(' + successf + ')');
-                              //console.log("JSON字符串："+ successf);
-                             /* var json1 = JSON.stringify($scope.chatlist);
-                              var json3 = json1.concat(successf);
-                              console.log("JSON3:"+json3);
-                              */
-                              //var chatlisti = $.extend([{}], eval('(' + successf + ')'), $scope.chatlist);
                               var chatlisti = $.merge(eval('(' + successf + ')'), $scope.chatlist);
-                              //console.log("JSON3:"+JSON.stringify(chatlisti));
-                             // setTimeout(function(){$scope.chatlist = chatlisti},5000);
-                                $scope.chatlist = chatlisti;
+                              $scope.chatlist = chatlisti;
                             }else{
                               window.localStorage.curdatayn = 0;
                               navigator.webtoast.showtoast("No more data!",1);

@@ -1,0 +1,72 @@
+<div class="pin_background" style=" background:#0070c9;">
+    <div class="pin">
+        <div class="pin_icon">
+            <img src="img/security.png" style ="width:150px; height:150px"/>
+        </div>
+        <div class="pin_num">
+            <span class="pin_tip" ></span>
+            <div class="point">
+                <ul id="pointui" style="margin-left:-102px;">
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li class="solid"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="keyboard">
+        <ul>
+            <li class="key" onclick="addnum()">1</li>
+            <li class="key" onclick="addnum()">2</li>
+            <li class="key" onclick="addnum()">3</li>
+        </ul>
+        <ul>
+            <li class="key" onclick="addnum()">4</li>
+            <li class="key" onclick="addnum()">5</li>
+            <li class="key" onclick="addnum()">6</li>
+        </ul>
+        <ul>
+            <li class="key" onclick="addnum()">7</li>
+            <li class="key" onclick="addnum()">8</li>
+            <li class="key" onclick="addnum()">9</li>
+        </ul>
+        <ul>
+            <li></li>
+            <li class="key" onclick="addnum()">0</li>
+            <li id = "delete_key" onclick="deletenum()">×</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var pin_store = localStorage.getItem("PIN");
+    var num = [];
+    function addnum(){
+        window.location.href="index.html";
+        /*
+        var poingui = document.getElementById("pointui");
+        var margin = parseInt(pointui.style.marginLeft);
+        if(margin < -12){
+            poingui.style.marginLeft= String(margin + 17)+ "px"
+            num.push(event.target.innerHTML);
+            console.log("啥"+num);
+        }
+        console.log("啥：");
+        if(num.length == 6){
+            pointui.style.marginLeft = "-102px";
+        }
+        */
+    }
+
+
+</script>

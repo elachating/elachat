@@ -13,6 +13,9 @@ define(['app'],function(app){
         localStorage.nowys=1;
       }
         document.addEventListener("deviceready",function(){
+           document.addEventListener("homebutton", function(){
+                console.log("菜单键：");
+           }, false);
             document.addEventListener("backbutton", function(){
                 console.log("当前地址："+ $location.url());
                 if($location.url()=="/" || $location.url()=="/me/index" || $location.url()=="/quotaindex" || $location.url()=="/asset"){
